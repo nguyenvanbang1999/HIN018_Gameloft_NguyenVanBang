@@ -8,6 +8,7 @@
 #include "Sprite2D.h"
 #include "Sprite3D.h"
 #include "Text.h"
+#include"Animation.h"
 
 
 extern int screenWidth; //need get on Graphic engine
@@ -45,7 +46,12 @@ void GSPlay::Init()
 		GameStateMachine::GetInstance()->ChangeState(StateTypes::STATE_Menu);
 		});
 	m_QuitButton = button;
-
+	//animation
+	texture = ResourceManagers::GetInstance()->GetTexture("baby1");
+	shader = ResourceManagers::GetInstance()->GetShader("AnimationShader");
+	m_animation = std::make_shared<Animation>(model, shader, texture,4,0.2f);
+	m_animation->Set2DPosition(screenWidth / 2, screenHeight / 2);
+	m_animation->SetSize(83, 104);
 
 	//text game title
 	shader = ResourceManagers::GetInstance()->GetShader("TextShader");
@@ -91,15 +97,16 @@ void GSPlay::HandleTouchEvents(int x, int y, bool bIsPressed)
 
 void GSPlay::Update(float deltaTime)
 {
+	m_animation->Update(deltaTime);
 }
 
 void GSPlay::Draw()
 {
 	
 	m_BackGround->Draw();
-	//m_QuitButton->Draw();
 	m_score->Draw();
 	m_QuitButton->Draw();
+	m_animation->Draw();
 }
 
 void GSPlay::SetNewPostionForBullet()
