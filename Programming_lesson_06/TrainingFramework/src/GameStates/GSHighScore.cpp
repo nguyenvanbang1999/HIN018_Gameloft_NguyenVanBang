@@ -41,7 +41,7 @@ void GSHighScore::Init()
 	button->SetSize(200, 50);
 	button->SetOnClick([]() {
 		
-		GameStateMachine::GetInstance()->ChangeState(StateTypes::STATE_Menu);
+		GameStateMachine::GetInstance()->PopState();
 		});
 	m_BackButton = button;
 }

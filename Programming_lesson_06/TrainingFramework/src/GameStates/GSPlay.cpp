@@ -43,15 +43,15 @@ void GSPlay::Init()
 	button->SetSize(200, 50);
 	button->SetOnClick([]() {
 
-		GameStateMachine::GetInstance()->ChangeState(StateTypes::STATE_Menu);
+		GameStateMachine::GetInstance()->PopState();
 		});
 	m_QuitButton = button;
 	//animation
-	texture = ResourceManagers::GetInstance()->GetTexture("baby1");
+	texture = ResourceManagers::GetInstance()->GetTexture("playerAnim");
 	shader = ResourceManagers::GetInstance()->GetShader("AnimationShader");
-	m_animation = std::make_shared<Animation>(model, shader, texture,4,0.2f);
+	m_animation = std::make_shared<Animation>(model, shader, texture,3,0.15f,2,5);
 	m_animation->Set2DPosition(screenWidth / 2, screenHeight / 2);
-	m_animation->SetSize(83, 104);
+	m_animation->SetSize(40, 40);
 
 	//text game title
 	shader = ResourceManagers::GetInstance()->GetShader("TextShader");

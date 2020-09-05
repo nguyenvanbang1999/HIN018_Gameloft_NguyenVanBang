@@ -4,7 +4,7 @@
 #include "Camera.h"
 #include "Texture.h"
 
-Animation::Animation(std::shared_ptr<Models> model, std::shared_ptr<Shaders> shader, std::shared_ptr<Texture> texture,int numFrames, float frameTime):Sprite2D(model,shader,texture), m_numFrames(numFrames),m_frameTime(frameTime),m_currentFrame(0),m_currentTime(0.0f)
+Animation::Animation(std::shared_ptr<Models> model, std::shared_ptr<Shaders> shader, std::shared_ptr<Texture> texture,int numFrames, float frameTime,int type,int numLines):Sprite2D(model,shader,texture), m_numFrames(numFrames),m_frameTime(frameTime),m_currentFrame(0),m_currentTime(0.0f),m_typeAnim(type),m_currentLine(numLines-1),m_numLines(numLines)
 {
 }
 void Animation::Init()
@@ -68,6 +68,18 @@ void Animation::Draw()
 	{
 		glUniform1f(iTempShaderVaribleGLID, m_currentFrame);
 	}
+	iTempShaderVaribleGLID = -1;
+	iTempShaderVaribleGLID = m_pShader->GetUniformLocation((char*)"u_numLines");
+	if (iTempShaderVaribleGLID != -1)
+	{
+		glUniform1f(iTempShaderVaribleGLID, m_numLines);
+	}
+	iTempShaderVaribleGLID = -1;
+	iTempShaderVaribleGLID = m_pShader->GetUniformLocation((char*)"u_currentLine");
+	if (iTempShaderVaribleGLID != -1)
+	{
+		glUniform1f(iTempShaderVaribleGLID, m_currentLine);
+	}
 
 
 
@@ -80,14 +92,25 @@ void Animation::Draw()
 void Animation::Update(GLfloat deltatime)
 {
 	
-	m_currentTime += deltatime;
-	if (m_currentTime >= m_frameTime) {
-		
-		m_currentFrame += 1;
-		if (m_currentFrame == m_numFrames) {
-			m_currentFrame = 0;
+	if (m_typeAnim != TYPE_SPRITE) {
+		m_currentTime += deltatime;
+		if (m_currentTime >= m_frameTime) {
+
+			m_currentFrame += 1;
+			if (m_currentFrame == m_numFrames) 
+			{
+				if (m_typeAnim == TYPE_LOOP) 
+				{
+					m_currentFrame = 0;
+				}
+				else 
+				{
+					m_currentFrame -= 1;
+					
+				}
+			}
+			m_currentTime -= m_frameTime;
+
 		}
-		m_currentTime -= m_frameTime;
-		
 	}
 }
