@@ -16,6 +16,9 @@
     <Filter Include="TrainingFramework\src\GameStates">
       <UniqueIdentifier>{2a875364-1a2b-4ea6-a6fe-716988208916}</UniqueIdentifier>
     </Filter>
+    <Filter Include="TrainingFramework\src\GameEntity">
+      <UniqueIdentifier>{d30a0138-40ea-461e-a3e1-a5fa5eb68b4b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp">
@@ -74,6 +77,30 @@
     </ClCompile>
     <ClCompile Include="src\GameObject\Animation.cpp">
       <Filter>TrainingFramework\src\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameEntity\Map.cpp">
+      <Filter>TrainingFramework\src\GameEntity</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameEntity\Entity.cpp">
+      <Filter>TrainingFramework\src\GameEntity</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameEntity\Player.cpp">
+      <Filter>TrainingFramework\src\GameEntity</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameEntity\Enemy.cpp">
+      <Filter>TrainingFramework\src\GameEntity</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameEntity\AliveEntites.cpp">
+      <Filter>TrainingFramework\src\GameEntity</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameEntity\Block.cpp">
+      <Filter>TrainingFramework\src\GameEntity</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameEntity\WoodBlock.cpp">
+      <Filter>TrainingFramework\src\GameEntity</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameEntity\BlockCantDestroy1.cpp">
+      <Filter>TrainingFramework\src\GameEntity</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -140,6 +167,30 @@
     </ClInclude>
     <ClInclude Include="src\GameObject\Animation.h">
       <Filter>TrainingFramework\src\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameEntity\Map.h">
+      <Filter>TrainingFramework\src\GameEntity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameEntity\Entity.h">
+      <Filter>TrainingFramework\src\GameEntity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameEntity\Player.h">
+      <Filter>TrainingFramework\src\GameEntity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameEntity\Enemy.h">
+      <Filter>TrainingFramework\src\GameEntity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameEntity\AliveEntites.h">
+      <Filter>TrainingFramework\src\GameEntity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameEntity\Block.h">
+      <Filter>TrainingFramework\src\GameEntity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameEntity\WoodBlock.h">
+      <Filter>TrainingFramework\src\GameEntity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameEntity\BlockCantDestroy1.h">
+      <Filter>TrainingFramework\src\GameEntity</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

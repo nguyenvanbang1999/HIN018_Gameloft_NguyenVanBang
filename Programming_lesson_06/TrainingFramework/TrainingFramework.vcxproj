@@ -261,6 +261,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="src\GameEntity\AliveEntites.cpp" />
+    <ClCompile Include="src\GameEntity\Block.cpp" />
+    <ClCompile Include="src\GameEntity\BlockCantDestroy1.cpp" />
+    <ClCompile Include="src\GameEntity\Enemy.cpp" />
+    <ClCompile Include="src\GameEntity\Entity.cpp" />
+    <ClCompile Include="src\GameEntity\Map.cpp" />
+    <ClCompile Include="src\GameEntity\Player.cpp" />
+    <ClCompile Include="src\GameEntity\WoodBlock.cpp" />
     <ClCompile Include="src\GameManager\ResourceManagers.cpp" />
     <ClCompile Include="src\GameObject\Animation.cpp" />
     <ClCompile Include="src\GameObject\Font.cpp" />
@@ -284,6 +292,14 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="src\Application.h" />
     <ClInclude Include="src\GameConfig.h" />
+    <ClInclude Include="src\GameEntity\AliveEntites.h" />
+    <ClInclude Include="src\GameEntity\Block.h" />
+    <ClInclude Include="src\GameEntity\BlockCantDestroy1.h" />
+    <ClInclude Include="src\GameEntity\Enemy.h" />
+    <ClInclude Include="src\GameEntity\Entity.h" />
+    <ClInclude Include="src\GameEntity\Map.h" />
+    <ClInclude Include="src\GameEntity\Player.h" />
+    <ClInclude Include="src\GameEntity\WoodBlock.h" />
     <ClInclude Include="src\GameManager\ResourceManagers.h" />
     <ClInclude Include="src\GameManager\Singleton.h" />
     <ClInclude Include="src\GameObject\Animation.h" />

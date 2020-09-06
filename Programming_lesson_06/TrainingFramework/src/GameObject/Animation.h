@@ -3,6 +3,7 @@
 #define		TYPE_SPRITE		0
 #define		TYPE_NORMAL		1
 #define		TYPE_LOOP		2
+
 class Animation :public Sprite2D 
 {
 public:
@@ -10,6 +11,9 @@ public:
 	void		Init() override;
 	void		Draw() override;
 	void		Update(GLfloat deltatime) override;
+	void		ChangedLine(int line);
+	void		ChangedType(int type);
+	void		StopAnim();
 protected:
 	int m_numFrames;
 	float m_frameTime;

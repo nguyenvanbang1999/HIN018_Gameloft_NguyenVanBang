@@ -16,6 +16,7 @@ ResourceManagers::ResourceManagers()
 	m_TexturePath = dataPath + "Textures\\";
 	m_ModelsPath = dataPath + "Model\\";
 	m_FontPath = dataPath + "fonts\\";
+	m_MapPath = dataPath + "Map\\";
 }
 
 ResourceManagers::~ResourceManagers()
@@ -157,4 +158,8 @@ std::shared_ptr<Font> ResourceManagers::GetFont(const std::string& name)
 	std::shared_ptr<Font> font = std::make_shared<Font>(path);
 	m_MapFont.insert(std::pair<std::string, std::shared_ptr<Font>>(name, font));
 	return font;
+}
+
+std::string ResourceManagers::GetMapData(const std::string& name) {
+	return m_MapPath + name + ".txt";
 }

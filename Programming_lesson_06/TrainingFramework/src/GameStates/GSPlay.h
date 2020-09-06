@@ -2,10 +2,12 @@
 #include "gamestatebase.h"
 #include"GameButton.h"
 
+
 class Sprite2D;
 class Sprite3D;
 class Text;
 class Animation;
+class Map;
 
 class GSPlay :
 	public GameStateBase
@@ -36,6 +38,8 @@ private:
 	std::shared_ptr<Text>  m_score;
 	std::shared_ptr<GameButton>  m_QuitButton;
 	std::shared_ptr<Animation> m_animation;
+	std::shared_ptr<Map> m_map;
+	int keyListener = 0;
 
 };
 

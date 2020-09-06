@@ -114,3 +114,15 @@ void Animation::Update(GLfloat deltatime)
 		}
 	}
 }
+void Animation::ChangedLine(int line) 
+{
+	m_currentLine = line;
+}
+void Animation::ChangedType(int type) 
+{
+	m_typeAnim = type;
+}
+void Animation::StopAnim()
+{
+	m_currentFrame = 0;
+}

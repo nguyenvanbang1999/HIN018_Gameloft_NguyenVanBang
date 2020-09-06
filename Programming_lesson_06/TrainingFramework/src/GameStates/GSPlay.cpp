@@ -9,6 +9,7 @@
 #include "Sprite3D.h"
 #include "Text.h"
 #include"Animation.h"
+#include "GameEntity/Map.h"
 
 
 extern int screenWidth; //need get on Graphic engine
@@ -28,6 +29,8 @@ GSPlay::~GSPlay()
 
 void GSPlay::Init()
 {
+	m_map = std::make_shared<Map>();
+	std::cout << "Init GSPlay" << std::endl;
 	auto model = ResourceManagers::GetInstance()->GetModel("Sprite2D");
 	auto texture = ResourceManagers::GetInstance()->GetTexture("bg_play");
 
@@ -59,7 +62,7 @@ void GSPlay::Init()
 	m_score = std::make_shared< Text>(shader, font, "score: 10", TEXT_COLOR::RED, 1.0);
 	m_score->Set2DPosition(Vector2(5, 25));
 	texture = ResourceManagers::GetInstance()->GetTexture("button_quit");
-
+	std::cout << "Init xong" << std::endl;
 	
 }
 
@@ -87,7 +90,7 @@ void GSPlay::HandleEvents()
 
 void GSPlay::HandleKeyEvents(int key, bool bIsPressed)
 {
-	
+	std::cout << key << std::endl;
 }
 
 void GSPlay::HandleTouchEvents(int x, int y, bool bIsPressed)
@@ -98,15 +101,19 @@ void GSPlay::HandleTouchEvents(int x, int y, bool bIsPressed)
 void GSPlay::Update(float deltaTime)
 {
 	m_animation->Update(deltaTime);
+	m_map->Update(deltaTime);
 }
 
 void GSPlay::Draw()
 {
-	
+	//std::cout << "Start Draw" << std::endl;
 	m_BackGround->Draw();
-	m_score->Draw();
+	//m_score->Draw();
 	m_QuitButton->Draw();
-	m_animation->Draw();
+	//m_animation->Draw();
+	
+	m_map->Draw();
+	//std::cout << "Draw xong" << std::endl;
 }
 
 void GSPlay::SetNewPostionForBullet()
