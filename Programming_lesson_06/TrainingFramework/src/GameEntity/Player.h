@@ -7,5 +7,5 @@ public:
 	Player(int locationX, int locationY);
 
 	
-	void print();
+	
 };

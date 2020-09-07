@@ -39,7 +39,7 @@ private:
 	std::shared_ptr<GameButton>  m_QuitButton;
 	std::shared_ptr<Animation> m_animation;
 	std::shared_ptr<Map> m_map;
-	int keyListener = 0;
+	int m_keyListener = 0;
 
 };
 

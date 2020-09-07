@@ -14,12 +14,13 @@ public:
 	void		ChangedLine(int line);
 	void		ChangedType(int type);
 	void		StopAnim();
+
+	int			m_typeAnim;
 protected:
-	int m_numFrames;
-	float m_frameTime;
-	int m_currentFrame;
-	float m_currentTime;
-	int m_typeAnim;
-	int m_numLines;
-	int m_currentLine;
+	int			m_numFrames;
+	float		m_frameTime;
+	int			m_currentFrame;
+	float		m_currentTime;
+	int			m_numLines;
+	int			m_currentLine;
 };

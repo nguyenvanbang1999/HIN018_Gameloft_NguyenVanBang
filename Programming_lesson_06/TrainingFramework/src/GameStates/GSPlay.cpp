@@ -12,6 +12,12 @@
 #include "GameEntity/Map.h"
 
 
+#define PRESS_S 1<<1
+#define PRESS_A 1<<2
+#define PRESS_D 1<<3
+#define PRESS_W 1<<4
+
+
 extern int screenWidth; //need get on Graphic engine
 extern int screenHeight; //need get on Graphic engine
 
@@ -90,7 +96,88 @@ void GSPlay::HandleEvents()
 
 void GSPlay::HandleKeyEvents(int key, bool bIsPressed)
 {
-	std::cout << key << std::endl;
+	if (bIsPressed)
+	{
+		switch (key)
+		{
+		case 'S':
+		{
+			
+			m_keyListener |= PRESS_S;
+
+			
+			break;
+		}
+		case 'A':
+		{
+			
+			m_keyListener |= PRESS_A;
+
+			
+			break;
+		}
+		case 'D':
+		{
+			
+			m_keyListener |= PRESS_D;
+
+			
+			break;
+		}
+		case 'W':
+		{
+			
+			m_keyListener |= PRESS_W;
+
+			
+			break;
+		}
+		default:
+		{
+			
+			break;
+		}
+		}
+	}
+	else
+	{
+		switch (key)
+		{
+		case 'S':
+		{
+			m_keyListener &= ~PRESS_S;
+			break;
+		}
+		case 'A':
+		{
+			
+			m_keyListener &= ~PRESS_A;
+			break;
+		}
+		case 'D':
+		{
+			
+			m_keyListener &= ~PRESS_D;
+			
+			break;
+		}
+		case 'W':
+		{
+			
+			m_keyListener &= ~PRESS_W;
+			
+			break;
+		}
+		default:
+		{
+			break;
+		}
+		}
+	}
+	
+
+		
+	
 }
 
 void GSPlay::HandleTouchEvents(int x, int y, bool bIsPressed)
@@ -102,6 +189,38 @@ void GSPlay::Update(float deltaTime)
 {
 	m_animation->Update(deltaTime);
 	m_map->Update(deltaTime);
+	bool checkMove = false;
+	if (m_keyListener&PRESS_S) {
+		m_map->m_player->ChangedDirection(DOWN_DIRECTION);
+		checkMove = true;
+	}
+	if (m_keyListener&PRESS_A) {
+		m_map->m_player->ChangedDirection(LEFT_DIRECTION);
+		
+		checkMove = true;
+	}
+	if (m_keyListener&PRESS_D) {
+		m_map->m_player->ChangedDirection(RIGHT_DIRECTION);
+		
+		checkMove = true;
+	}
+	if (m_keyListener&PRESS_W) {
+		m_map->m_player->ChangedDirection(TOP_DIRECTION);
+		
+		checkMove = true;
+	}
+
+	if (!checkMove) 
+	{
+		m_map->m_player->Stop();
+	}
+	else
+	{
+		m_map->m_player->Running();
+	}
+
+
+	
 }
 
 void GSPlay::Draw()

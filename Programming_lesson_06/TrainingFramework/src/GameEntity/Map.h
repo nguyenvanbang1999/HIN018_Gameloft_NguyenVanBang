@@ -14,8 +14,9 @@ public:
 	
 	void Draw();
 	void Update(GLfloat deltatime);
-protected:
 	std::shared_ptr<Player> m_player;
+protected:
+	
 	std::vector<std::shared_ptr<Enemy>> m_enemies;
 	std::vector<std::shared_ptr<Block>> m_blocks;
 	

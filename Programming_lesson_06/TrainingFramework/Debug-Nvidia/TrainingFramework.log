@@ -1,57 +1,16 @@
 ﻿cl : Command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  GSPlay.cpp
-c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\block.h(5): warning C4005: 'ANIM_SPEED': macro redefinition
-  c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\aliveentites.h(13): note: see previous definition of 'ANIM_SPEED'
-c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gsplay.cpp(40): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gsplay.cpp(45): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gsplay.cpp(56): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(1801): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
-          with
-          [
-              _Ty=double
-          ]
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(1866): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[10],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[10],TEXT_COLOR &&,double &&)' being compiled
-          with
-          [
-              _Ty=Text
-          ]
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(1866): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[10],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[10],TEXT_COLOR &&,double &&)' being compiled
-          with
-          [
-              _Ty=Text
-          ]
-  c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gsplay.cpp(62): note: see reference to function template instantiation 'std::shared_ptr<Text> std::make_shared<Text,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[10],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[10],TEXT_COLOR &&,double &&)' being compiled
-  Animation.cpp
-c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameobject\animation.cpp(63): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameobject\animation.cpp(69): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameobject\animation.cpp(75): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameobject\animation.cpp(81): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-  Player.cpp
-c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\block.h(5): warning C4005: 'ANIM_SPEED': macro redefinition
-  c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\aliveentites.h(13): note: see previous definition of 'ANIM_SPEED'
-c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\player.cpp(15): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
   AliveEntites.cpp
-  Generating Code...
-  Compiling...
-  GameStatebase.cpp
-  WoodBlock.cpp
-c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\aliveentites.h(13): warning C4005: 'ANIM_SPEED': macro redefinition
-  c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\block.h(5): note: see previous definition of 'ANIM_SPEED'
-c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\woodblock.cpp(11): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-  Map.cpp
-c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\block.h(5): warning C4005: 'ANIM_SPEED': macro redefinition
-  c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\aliveentites.h(13): note: see previous definition of 'ANIM_SPEED'
-c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\map.cpp(29): warning C4018: '<': signed/unsigned mismatch
-  Enemy.cpp
-c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\block.h(5): warning C4005: 'ANIM_SPEED': macro redefinition
-  c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\aliveentites.h(13): note: see previous definition of 'ANIM_SPEED'
-c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\enemy.cpp(14): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-  BlockCantDestroy1.cpp
-c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\aliveentites.h(13): warning C4005: 'ANIM_SPEED': macro redefinition
-  c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\block.h(5): note: see previous definition of 'ANIM_SPEED'
-c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\blockcantdestroy1.cpp(14): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\aliveentites.cpp(37): warning C4244: '-=': conversion from 'GLfloat' to 'int', possible loss of data
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\aliveentites.cpp(43): warning C4244: '+=': conversion from 'GLfloat' to 'int', possible loss of data
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\aliveentites.cpp(49): warning C4244: '-=': conversion from 'GLfloat' to 'int', possible loss of data
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\aliveentites.cpp(55): warning C4244: '+=': conversion from 'GLfloat' to 'int', possible loss of data
   Generating Code...
   Skipping... (no relevant changes detected)
+  GSPlay.cpp
+  WoodBlock.cpp
+  Player.cpp
+  Map.cpp
   Entity.cpp
-  Block.cpp
+  Enemy.cpp
+  BlockCantDestroy1.cpp
   TrainingFramework.vcxproj -> C:\Users\bang8\Desktop\Git_test\HIN018_Gameloft_NguyenVanBang\Programming_lesson_06\\BIN-Nvidia\TrainingFramework.exe
