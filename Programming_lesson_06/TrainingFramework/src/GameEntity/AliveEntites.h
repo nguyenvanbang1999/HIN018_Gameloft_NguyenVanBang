@@ -8,7 +8,7 @@
 #define		STUN			0 
 
 
-#define		PLAYER_SPEED	100
+#define		PLAYER_SPEED	200
 #define		NUM_FRAME_ALIVE		3
 #define		ANIM_SPEED_ALIVE	0.2f
 #define		NUM_LINE_ALIVE		5
@@ -25,9 +25,10 @@ public:
 
 	int m_direction;
 	bool m_running;
+	int m_speed;
 protected:
 	
-	int m_speed;
+	
 
 
 };

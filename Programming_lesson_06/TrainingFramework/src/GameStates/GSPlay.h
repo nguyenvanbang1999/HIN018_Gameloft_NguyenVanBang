@@ -28,6 +28,7 @@ public:
 	void HandleTouchEvents(int x, int y, bool bIsPressed);
 	void Update(float deltaTime);
 	void Draw();
+	void AddAnim(std::shared_ptr<Animation> anim);
 
 	
 	void SetNewPostionForBullet();
@@ -37,7 +38,8 @@ private:
 	std::shared_ptr<Sprite2D> m_BackGround;
 	std::shared_ptr<Text>  m_score;
 	std::shared_ptr<GameButton>  m_QuitButton;
-	std::shared_ptr<Animation> m_animation;
+	std::vector< std::shared_ptr<Animation>> m_listAnim;
+	std::vector< std::shared_ptr<Sprite2D>> m_listSprite;
 	std::shared_ptr<Map> m_map;
 	int m_keyListener = 0;
 

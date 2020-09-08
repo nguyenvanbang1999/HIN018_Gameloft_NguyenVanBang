@@ -23,10 +23,14 @@ void Application::Init()
 
 void Application::Update(GLfloat deltaTime)
 {
-	GameStateMachine::GetInstance()->PerformStateChange();
+	if (deltaTime > 0) 
+	{
+		std::cout << deltaTime << std::endl;
+		GameStateMachine::GetInstance()->PerformStateChange();
 
-	if (GameStateMachine::GetInstance()->HasState())
-		GameStateMachine::GetInstance()->CurrentState()->Update(deltaTime);
+		if (GameStateMachine::GetInstance()->HasState())
+			GameStateMachine::GetInstance()->CurrentState()->Update(deltaTime);
+	}
 }
 
 void Application::Render()

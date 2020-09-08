@@ -13,10 +13,13 @@ public:
 
 	Entity(int locationX,int locationY);
 	void Draw();
-	void Update(GLfloat deltatime);
-protected:
+	void Update(float deltatime);
 	int m_locationX;
 	int m_locationY;
-	bool m_isExist;
+	int m_size;
 	std::shared_ptr<Animation> m_animation;
+protected:
+	
+	bool m_isExist;
+	
 };
