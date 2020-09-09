@@ -4,5 +4,5 @@
 class BlockCantDestroy1 :public Block 
 {
 public:
-	BlockCantDestroy1(int x, int y);
+	BlockCantDestroy1(std::shared_ptr<Vec2i> location);
 };

@@ -16,6 +16,7 @@
 #define PRESS_A 4
 #define PRESS_D 8
 #define PRESS_W 16
+#define PRESS_SPACE 32
 
 
 extern int screenWidth; //need get on Graphic engine
@@ -38,7 +39,7 @@ void GSPlay::Init()
 	m_map = std::make_shared<Map>(this);
 	std::cout << "Init GSPlay" << std::endl;
 	auto model = ResourceManagers::GetInstance()->GetModel("Sprite2D");
-	auto texture = ResourceManagers::GetInstance()->GetTexture("bg_play");
+	auto texture = ResourceManagers::GetInstance()->GetTexture("Playbackground");
 
 	//BackGround
 	auto shader = ResourceManagers::GetInstance()->GetShader("TextureShader");
@@ -64,10 +65,10 @@ void GSPlay::Init()
 	
 
 	// quit button
-	texture = ResourceManagers::GetInstance()->GetTexture("button_quit");
+	texture = ResourceManagers::GetInstance()->GetTexture("Backbutton");
 	std::shared_ptr<GameButton> button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(screenWidth - 120, 30);
-	button->SetSize(200, 50);
+	button->Set2DPosition(screenWidth - 30, 30);
+	button->SetSize(50, 50);
 	button->SetOnClick([]() {
 
 		GameStateMachine::GetInstance()->PopState();
@@ -151,6 +152,13 @@ void GSPlay::HandleKeyEvents(int key, bool bIsPressed)
 			
 			break;
 		}
+		case ' ':
+		{
+
+			m_map->SpawnBoom(m_map->m_player->m_location->m_x, m_map->m_player->m_location->m_y);
+
+			break;
+		}
 		default:
 		{
 			
@@ -192,6 +200,7 @@ void GSPlay::HandleKeyEvents(int key, bool bIsPressed)
 			
 			break;
 		}
+		
 		default:
 		{
 			break;
@@ -212,19 +221,24 @@ void GSPlay::HandleTouchEvents(int x, int y, bool bIsPressed)
 void GSPlay::Update(float deltaTime)
 {
 	int moveRange = 0;
+	int lastBomindex = m_map->m_booms.size() - 1;
 	if (m_keyListener != 0) {
 		moveRange= deltaTime * m_map->m_player->m_speed;
 	}
-	int tempX = m_map->m_player->m_locationX;
-	int tempY = m_map->m_player->m_locationY;
+	int tempX = m_map->m_player->m_location->m_x;
+	int tempY = m_map->m_player->m_location->m_y;
 	int playerSize = m_map->m_player->m_size;
 	bool checkMove = false;
 	if (m_keyListener&PRESS_S) {
 		m_map->m_player->ChangedDirection(DOWN_DIRECTION);
 		tempY += moveRange;
-		if (m_map->CheckCanMove(tempX, tempY, playerSize)) 
+		if (m_map->CheckCanMove(tempX, tempY, playerSize,  m_map->m_player->m_checkExitBom))
 		{
-			m_map->m_player->m_locationY = tempY;
+			m_map->m_player->m_location->m_y = tempY;
+			if (lastBomindex >= 0)
+			{
+				m_map->m_player->SetCheck(m_map->m_booms.at(m_map->m_booms.size() - 1));
+			}
 		}
 		else
 		{
@@ -235,9 +249,13 @@ void GSPlay::Update(float deltaTime)
 	if (m_keyListener&PRESS_A) {
 		m_map->m_player->ChangedDirection(LEFT_DIRECTION);
 		tempX -= moveRange;
-		if (m_map->CheckCanMove(tempX, tempY, playerSize))
+		if (m_map->CheckCanMove(tempX, tempY, playerSize,  m_map->m_player->m_checkExitBom) )
 		{
-			m_map->m_player->m_locationX = tempX;
+			m_map->m_player->m_location->m_x = tempX;
+			if (lastBomindex >= 0)
+			{
+				m_map->m_player->SetCheck(m_map->m_booms.at(m_map->m_booms.size() - 1));
+			}
 		}
 		else
 		{
@@ -249,9 +267,14 @@ void GSPlay::Update(float deltaTime)
 	if (m_keyListener&PRESS_D) {
 		m_map->m_player->ChangedDirection(RIGHT_DIRECTION);
 		tempX += moveRange;
-		if (m_map->CheckCanMove(tempX, tempY, playerSize))
+		if (m_map->CheckCanMove(tempX, tempY, playerSize,  m_map->m_player->m_checkExitBom) )
 		{
-			m_map->m_player->m_locationX = tempX;
+			
+			m_map->m_player->m_location->m_x = tempX;
+			if (lastBomindex >= 0)
+			{
+				m_map->m_player->SetCheck(m_map->m_booms.at(m_map->m_booms.size() - 1));
+			}
 		}
 		else
 		{
@@ -263,9 +286,13 @@ void GSPlay::Update(float deltaTime)
 	if (m_keyListener&PRESS_W) {
 		m_map->m_player->ChangedDirection(TOP_DIRECTION);
 		tempY -= moveRange;
-		if (m_map->CheckCanMove(tempX, tempY, playerSize))
+		if (m_map->CheckCanMove(tempX, tempY, playerSize, m_map->m_player->m_checkExitBom) )
 		{
-			m_map->m_player->m_locationY = tempY;
+			m_map->m_player->m_location->m_y = tempY;
+			if (lastBomindex >= 0)
+			{
+				m_map->m_player->SetCheck(m_map->m_booms.at(m_map->m_booms.size() - 1));
+			}
 		}
 		else
 		{
@@ -296,7 +323,7 @@ void GSPlay::Update(float deltaTime)
 void GSPlay::Draw()
 {
 	//std::cout << "Start Draw" << std::endl;
-	//m_BackGround->Draw();
+	m_BackGround->Draw();
 	//m_score->Draw();
 	m_QuitButton->Draw();
 	//m_animation->Draw();

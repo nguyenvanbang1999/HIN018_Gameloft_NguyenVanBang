@@ -9,6 +9,6 @@
 class Block :public Entity 
 {
 public:
-	Block(int x,int y);
+	Block(std::shared_ptr<Vec2i> location);
 	bool m_isCanMove;
 };

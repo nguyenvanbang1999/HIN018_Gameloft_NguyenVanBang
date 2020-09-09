@@ -1,6 +1,6 @@
 #include"Entity.h"
-#include "Map.h"
-Entity::Entity(int locationX,int locationY) :m_locationX(locationX),m_locationY(locationY),m_size(ENTITY_SIZE)
+
+Entity::Entity(std::shared_ptr<Vec2i> location) :m_location(location),m_size(ENTITY_SIZE),m_isExist(true)
 {
 
 }
@@ -11,5 +11,5 @@ void Entity::Draw() {
 }
 void Entity::Update(float deltatime) {
 	m_animation->Update(deltatime);
-	m_animation->Set2DPosition(m_locationX, m_locationY);
+	m_animation->Set2DPosition(m_location->m_x, m_location->m_y);
 }

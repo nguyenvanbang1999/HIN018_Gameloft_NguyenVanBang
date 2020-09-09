@@ -5,5 +5,5 @@ class WoodBlock :public Block
 {
 public:
 
-	WoodBlock(int x, int y);
+	WoodBlock(std::shared_ptr<Vec2i> location);
 };

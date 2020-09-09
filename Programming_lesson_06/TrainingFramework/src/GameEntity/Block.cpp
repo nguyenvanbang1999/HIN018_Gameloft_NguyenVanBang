@@ -1,5 +1,5 @@
 #include "Block.h"
 
-Block::Block(int x,int y):Entity(x,y) {
+Block::Block(std::shared_ptr<Vec2i> location):Entity(location) {
 
 }

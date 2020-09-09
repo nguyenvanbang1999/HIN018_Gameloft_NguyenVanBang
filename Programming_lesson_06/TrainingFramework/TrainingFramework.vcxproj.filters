@@ -72,9 +72,6 @@
     <ClCompile Include="src\GameObject\GameButton.cpp">
       <Filter>TrainingFramework\src\GameObject</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameStates\GSHighScore.cpp">
-      <Filter>TrainingFramework\src\GameStates</Filter>
-    </ClCompile>
     <ClCompile Include="src\GameObject\Animation.cpp">
       <Filter>TrainingFramework\src\GameObject</Filter>
     </ClCompile>
@@ -100,6 +97,15 @@
       <Filter>TrainingFramework\src\GameEntity</Filter>
     </ClCompile>
     <ClCompile Include="src\GameEntity\BlockCantDestroy1.cpp">
+      <Filter>TrainingFramework\src\GameEntity</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameStates\GSCredits.cpp">
+      <Filter>TrainingFramework\src\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameEntity\Boom.cpp">
+      <Filter>TrainingFramework\src\GameEntity</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameEntity\Vec2i.cpp">
       <Filter>TrainingFramework\src\GameEntity</Filter>
     </ClCompile>
   </ItemGroup>
@@ -162,9 +168,6 @@
       <Filter>TrainingFramework\src\GameObject</Filter>
     </ClInclude>
     <ClInclude Include="resource.h" />
-    <ClInclude Include="src\GameStates\GSHighScore.h">
-      <Filter>TrainingFramework\src\GameStates</Filter>
-    </ClInclude>
     <ClInclude Include="src\GameObject\Animation.h">
       <Filter>TrainingFramework\src\GameObject</Filter>
     </ClInclude>
@@ -190,6 +193,15 @@
       <Filter>TrainingFramework\src\GameEntity</Filter>
     </ClInclude>
     <ClInclude Include="src\GameEntity\BlockCantDestroy1.h">
+      <Filter>TrainingFramework\src\GameEntity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameStates\GSCredits.h">
+      <Filter>TrainingFramework\src\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameEntity\Boom.h">
+      <Filter>TrainingFramework\src\GameEntity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameEntity\Vec2i.h">
       <Filter>TrainingFramework\src\GameEntity</Filter>
     </ClInclude>
   </ItemGroup>

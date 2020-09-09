@@ -3,6 +3,9 @@
 #include<cmath>
 
 #include"Animation.h"
+#include"Vec2i.h"
+
+
 
 #define ENTITY_SIZE 40
 
@@ -11,15 +14,17 @@ class Entity
 public:
 	
 
-	Entity(int locationX,int locationY);
+	Entity(std::shared_ptr<Vec2i> location);
+
 	void Draw();
 	void Update(float deltatime);
-	int m_locationX;
-	int m_locationY;
+	std::shared_ptr<Vec2i> m_location;
 	int m_size;
+	bool m_isExist;
+	
 	std::shared_ptr<Animation> m_animation;
 protected:
 	
-	bool m_isExist;
+	
 	
 };

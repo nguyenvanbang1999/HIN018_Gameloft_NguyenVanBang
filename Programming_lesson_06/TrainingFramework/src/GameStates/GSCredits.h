@@ -6,12 +6,12 @@ class Sprite2D;
 class Sprite3D;
 class Text;
 
-class GSHighScore :
+class GSCredits :
 	public GameStateBase
 {
 public:
-	GSHighScore();
-	~GSHighScore();
+	GSCredits();
+	~GSCredits();
 
 	void Init();
 	void Exit();

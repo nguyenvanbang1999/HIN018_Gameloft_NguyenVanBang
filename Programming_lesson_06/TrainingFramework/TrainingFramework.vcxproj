@@ -264,10 +264,12 @@
     <ClCompile Include="src\GameEntity\AliveEntites.cpp" />
     <ClCompile Include="src\GameEntity\Block.cpp" />
     <ClCompile Include="src\GameEntity\BlockCantDestroy1.cpp" />
+    <ClCompile Include="src\GameEntity\Boom.cpp" />
     <ClCompile Include="src\GameEntity\Enemy.cpp" />
     <ClCompile Include="src\GameEntity\Entity.cpp" />
     <ClCompile Include="src\GameEntity\Map.cpp" />
     <ClCompile Include="src\GameEntity\Player.cpp" />
+    <ClCompile Include="src\GameEntity\Vec2i.cpp" />
     <ClCompile Include="src\GameEntity\WoodBlock.cpp" />
     <ClCompile Include="src\GameManager\ResourceManagers.cpp" />
     <ClCompile Include="src\GameObject\Animation.cpp" />
@@ -282,7 +284,7 @@
     <ClCompile Include="src\GameObject\Texture.cpp" />
     <ClCompile Include="src\GameStates\GameStatebase.cpp" />
     <ClCompile Include="src\GameStates\GameStateMachine.cpp" />
-    <ClCompile Include="src\GameStates\GSHighScore.cpp" />
+    <ClCompile Include="src\GameStates\GSCredits.cpp" />
     <ClCompile Include="src\GameStates\GSIntro.cpp" />
     <ClCompile Include="src\GameStates\GSMenu.cpp" />
     <ClCompile Include="src\GameStates\GSPlay.cpp" />
@@ -295,10 +297,12 @@
     <ClInclude Include="src\GameEntity\AliveEntites.h" />
     <ClInclude Include="src\GameEntity\Block.h" />
     <ClInclude Include="src\GameEntity\BlockCantDestroy1.h" />
+    <ClInclude Include="src\GameEntity\Boom.h" />
     <ClInclude Include="src\GameEntity\Enemy.h" />
     <ClInclude Include="src\GameEntity\Entity.h" />
     <ClInclude Include="src\GameEntity\Map.h" />
     <ClInclude Include="src\GameEntity\Player.h" />
+    <ClInclude Include="src\GameEntity\Vec2i.h" />
     <ClInclude Include="src\GameEntity\WoodBlock.h" />
     <ClInclude Include="src\GameManager\ResourceManagers.h" />
     <ClInclude Include="src\GameManager\Singleton.h" />
@@ -315,7 +319,7 @@
     <ClInclude Include="src\GameObject\Texture.h" />
     <ClInclude Include="src\GameStates\GameStatebase.h" />
     <ClInclude Include="src\GameStates\GameStateMachine.h" />
-    <ClInclude Include="src\GameStates\GSHighScore.h" />
+    <ClInclude Include="src\GameStates\GSCredits.h" />
     <ClInclude Include="src\GameStates\GSIntro.h" />
     <ClInclude Include="src\GameStates\GSMenu.h" />
     <ClInclude Include="src\GameStates\GSPlay.h" />

@@ -1,11 +1,14 @@
 #pragma once
 #include "AliveEntites.h"
 #include<memory>
+#include"Boom.h"
 class Player : public AliveEnties 
 {
 public:
-	Player(int locationX, int locationY);
-
+	Player(std::shared_ptr<Vec2i> location);
+	int m_numBooms;
+	bool m_checkExitBom = true;
+	void SetCheck(std::shared_ptr<Boom> bom);
 	
 	
 };

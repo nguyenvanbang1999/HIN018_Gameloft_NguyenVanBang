@@ -25,7 +25,7 @@ void Application::Update(GLfloat deltaTime)
 {
 	if (deltaTime > 0) 
 	{
-		std::cout << deltaTime << std::endl;
+		//std::cout << deltaTime << std::endl;
 		GameStateMachine::GetInstance()->PerformStateChange();
 
 		if (GameStateMachine::GetInstance()->HasState())

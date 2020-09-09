@@ -1,4 +1,4 @@
-#include "GSHighScore.h"
+#include "GSCredits.h"
 #include "Shaders.h"
 #include "Texture.h"
 #include "Models.h"
@@ -11,22 +11,22 @@
 extern int screenWidth; //need get on Graphic engine
 extern int screenHeight; //need get on Graphic engine
 
-GSHighScore::GSHighScore()
+GSCredits::GSCredits()
 {
 
 }
 
 
-GSHighScore::~GSHighScore()
+GSCredits::~GSCredits()
 {
 
 }
 
 
-void GSHighScore::Init()
+void GSCredits::Init()
 {
 	auto model = ResourceManagers::GetInstance()->GetModel("Sprite2D");
-	auto texture = ResourceManagers::GetInstance()->GetTexture("bg_main_menu");
+	auto texture = ResourceManagers::GetInstance()->GetTexture("Creditsbackground");
 
 	//BackGround
 	auto shader = ResourceManagers::GetInstance()->GetShader("TextureShader");
@@ -35,10 +35,10 @@ void GSHighScore::Init()
 	m_BackGround->SetSize(screenWidth, screenHeight);
 
 	//quit button
-	texture = ResourceManagers::GetInstance()->GetTexture("button_quit");
+	texture = ResourceManagers::GetInstance()->GetTexture("Backbutton");
 	std::shared_ptr<GameButton> button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(120, 30);
-	button->SetSize(200, 50);
+	button->Set2DPosition(screenWidth-30, 30);
+	button->SetSize(50, 50);
 	button->SetOnClick([]() {
 		
 		GameStateMachine::GetInstance()->PopState();
@@ -46,49 +46,49 @@ void GSHighScore::Init()
 	m_BackButton = button;
 }
 
-void GSHighScore::Exit()
+void GSCredits::Exit()
 {
 
 }
 
 
-void GSHighScore::Pause()
+void GSCredits::Pause()
 {
 
 }
 
-void GSHighScore::Resume()
+void GSCredits::Resume()
 {
 
 }
 
 
-void GSHighScore::HandleEvents()
+void GSCredits::HandleEvents()
 {
 
 }
 
-void GSHighScore::HandleKeyEvents(int key, bool bIsPressed)
+void GSCredits::HandleKeyEvents(int key, bool bIsPressed)
 {
 
 }
 
-void GSHighScore::HandleTouchEvents(int x, int y, bool bIsPressed)
+void GSCredits::HandleTouchEvents(int x, int y, bool bIsPressed)
 {
 	m_BackButton->HandleTouchEvents(x, y, bIsPressed);
 	
 }
 
-void GSHighScore::Update(float deltaTime)
+void GSCredits::Update(float deltaTime)
 {
 }
 
-void GSHighScore::Draw()
+void GSCredits::Draw()
 {
 	m_BackGround->Draw();
 	m_BackButton->Draw();
 }
 
-void GSHighScore::SetNewPostionForBullet()
+void GSCredits::SetNewPostionForBullet()
 {
 }
