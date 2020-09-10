@@ -11,4 +11,5 @@ class Block :public Entity
 public:
 	Block(std::shared_ptr<Vec2i> location);
 	bool m_isCanMove;
+	
 };

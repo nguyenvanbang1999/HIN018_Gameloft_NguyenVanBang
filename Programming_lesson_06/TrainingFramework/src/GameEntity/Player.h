@@ -9,6 +9,6 @@ public:
 	int m_numBooms;
 	bool m_checkExitBom = true;
 	void SetCheck(std::shared_ptr<Boom> bom);
-	
+	int m_boomPower;
 	
 };

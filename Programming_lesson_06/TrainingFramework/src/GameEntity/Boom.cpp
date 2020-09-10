@@ -1,7 +1,7 @@
 #include"Boom.h"
 #include"ResourceManagers.h"
 
-Boom::Boom(std::shared_ptr<Vec2i> location):Entity(location),m_time(2.5f)
+Boom::Boom(std::shared_ptr<Vec2i> location,int power):Entity(location),m_time(2.5f),m_power(power),m_checkBang(false)
 {
 	auto model = ResourceManagers::GetInstance()->GetModel("Sprite2D");
 	auto texture = ResourceManagers::GetInstance()->GetTexture("Bom");

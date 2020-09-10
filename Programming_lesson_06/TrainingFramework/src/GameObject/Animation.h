@@ -14,7 +14,7 @@ public:
 	void		ChangedLine(int line);
 	void		ChangedType(int type);
 	void		StopAnim();
-
+	bool		m_isExist;
 	int			m_typeAnim;
 protected:
 	int			m_numFrames;

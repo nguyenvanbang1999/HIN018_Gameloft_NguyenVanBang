@@ -155,7 +155,8 @@ void GSPlay::HandleKeyEvents(int key, bool bIsPressed)
 		case ' ':
 		{
 
-			m_map->SpawnBoom(m_map->m_player->m_location->m_x, m_map->m_player->m_location->m_y);
+			m_map->SpawnBoom(m_map->m_player->m_location->m_x, m_map->m_player->m_location->m_y);\
+			
 
 			break;
 		}
@@ -315,6 +316,46 @@ void GSPlay::Update(float deltaTime)
 		a->Update(deltaTime);
 	}*/
 	m_map->Update(deltaTime);
+	//std::cout << m_listAnim.size() << std::endl;
+	int i = 0;
+	for (std::shared_ptr<Animation> a : m_listAnim)
+	{
+
+		//std::cout << "up " <<i<< std::endl;
+		a->Update(deltaTime);
+		i++;
+	}
+	for(int i=0;i<m_listAnim.size();)
+	{
+		if (m_listAnim.at(i)->m_isExist==false)
+		{
+			m_listAnim.erase(m_listAnim.begin() + i);
+		}
+		else i++;
+	}
+	
+	for (std::shared_ptr<Vec2i> v : m_map->m_listFireLocation)
+	{
+		
+		auto model = ResourceManagers::GetInstance()->GetModel("Sprite2D");
+		auto texture = ResourceManagers::GetInstance()->GetTexture("fireAnim");
+		auto shader = ResourceManagers::GetInstance()->GetShader("AnimationShader");
+		std::shared_ptr<Animation> anim = std::make_shared<Animation>(model, shader, texture, NUM_FRAME, ANIM_SPEED, TYPE_NORMAL, NUM_LINE);
+		anim->Set2DPosition(v->m_x, v->m_y);
+		std::cout << v->m_x<<" "<<v->m_y << std::endl;
+		anim->SetSize(ENTITY_SIZE, ENTITY_SIZE);
+		m_listAnim.push_back(anim);
+		//std::cout << "xong "   << std::endl;
+		
+	}
+	if (m_map->m_listFireLocation.size()>0)
+	{
+		std::cout << m_map->m_listFireLocation.size() << std::endl;
+	}
+
+	
+	
+	
 
 
 	
@@ -330,10 +371,10 @@ void GSPlay::Draw()
 	
 	m_map->Draw();
 	//std::cout << "Draw xong" << std::endl;
-	/*for (auto a : m_listAnim)
+	for (auto a : m_listAnim)
 	{
 		a->Draw();
-	}*/
+	}
 }
 
 void GSPlay::AddAnim(std::shared_ptr<Animation> anim)

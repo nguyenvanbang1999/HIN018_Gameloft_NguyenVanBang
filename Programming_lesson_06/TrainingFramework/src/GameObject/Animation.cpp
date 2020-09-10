@@ -4,7 +4,7 @@
 #include "Camera.h"
 #include "Texture.h"
 
-Animation::Animation(std::shared_ptr<Models> model, std::shared_ptr<Shaders> shader, std::shared_ptr<Texture> texture,int numFrames, float frameTime,int type,int numLines):Sprite2D(model,shader,texture), m_numFrames(numFrames),m_frameTime(frameTime),m_currentFrame(0),m_currentTime(0.0f),m_typeAnim(type),m_currentLine(numLines-1),m_numLines(numLines)
+Animation::Animation(std::shared_ptr<Models> model, std::shared_ptr<Shaders> shader, std::shared_ptr<Texture> texture,int numFrames, float frameTime,int type,int numLines):Sprite2D(model,shader,texture), m_numFrames(numFrames),m_frameTime(frameTime),m_currentFrame(0),m_currentTime(0.0f),m_typeAnim(type),m_currentLine(numLines-1),m_numLines(numLines),m_isExist(true)
 {
 }
 void Animation::Init()
@@ -103,11 +103,11 @@ void Animation::Update(GLfloat deltatime)
 				{
 					m_currentFrame = 0;
 				}
-				else 
+				if (m_typeAnim == TYPE_NORMAL)
 				{
-					m_currentFrame -= 1;
-					
+					m_isExist = false;
 				}
+				
 			}
 			m_currentTime -= m_frameTime;
 

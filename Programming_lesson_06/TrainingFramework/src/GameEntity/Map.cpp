@@ -60,14 +60,14 @@ Map::Map(GSPlay* gs) :m_GSPlay(gs)
 			{
 				std::shared_ptr<BlockCantDestroy1> block = std::make_shared<BlockCantDestroy1>(loc);
 				m_blocks.push_back(block);
-				m_GSPlay->AddAnim(block->m_animation);
+				//m_GSPlay->AddAnim(block->m_animation);
 				break;
 			}
 			case 'P':
 			{
 				std::shared_ptr<Player> player = std::make_shared<Player>(loc);
 				m_player = player;
-				m_GSPlay->AddAnim(player->m_animation);
+				//m_GSPlay->AddAnim(player->m_animation);
 				break;
 			}
 			case 'W':
@@ -75,14 +75,14 @@ Map::Map(GSPlay* gs) :m_GSPlay(gs)
 				std::shared_ptr<WoodBlock> block = std::make_shared<WoodBlock>(loc);
 				m_blocks.push_back(block);
 				m_blocks2.push_back(block);
-				m_GSPlay->AddAnim(block->m_animation);
+				//m_GSPlay->AddAnim(block->m_animation);
 				break;
 			}
 			case 'E':
 			{
 				std::shared_ptr<Enemy> e = std::make_shared<Enemy>(loc);
 				m_enemies.push_back(e);
-				m_GSPlay->AddAnim(e->m_animation);
+				//m_GSPlay->AddAnim(e->m_animation);
 				break;
 			}
 			default:
@@ -122,7 +122,7 @@ void Map::Update(float deltatime)
 {
 	//std::cout << deltatime << std::endl;
 	m_player->Update(deltatime);
-	
+	m_listFireLocation.clear();
 	for (auto e : m_enemies) 
 	{
 		e->Move(deltatime,this);
@@ -142,6 +142,8 @@ void Map::Update(float deltatime)
 		{
 			m_player->m_numBooms++;
 			m_booms.erase(m_booms.begin() + i);
+			BomBang(b);
+
 		}
 		else
 		{
@@ -158,11 +160,11 @@ bool Map::CheckCanMove(int x, int y, int size,bool isPlayer)
 			return false;
 		}
 	}
-	/*int n = m_booms.size() - 1;
+	int n = m_booms.size() ;
 	if (isPlayer)
 	{
 		n -= 1;
-		std::cout << "chua exit" << std::endl;
+		//std::cout << "chua exit" << std::endl;
 	}
 	else
 	{
@@ -174,7 +176,7 @@ bool Map::CheckCanMove(int x, int y, int size,bool isPlayer)
 		{
 			return false;
 		}
-	}*/
+	}
 	return  true;
 }
 
@@ -201,12 +203,60 @@ void Map::SpawnBoom(int x, int y)
 
 
 	int y1 = ((y-MAP_TOP_GUI) / ENTITY_SIZE)*ENTITY_SIZE + ENTITY_SIZE / 2+ MAP_TOP_GUI;
-	std::cout << x<<" "<<y<<std::endl;
-	std::cout << x1 << " " << y1 << std::endl;
 	if (!CheckHasBoom(x1, y1)&& m_player->m_numBooms>0)
 	{
-		m_booms.push_back(std::make_shared<Boom>(std::make_shared<Vec2i>(x1,y1)));
+		m_booms.push_back(std::make_shared<Boom>(std::make_shared<Vec2i>(x1,y1), m_player->m_boomPower));
 		m_player->m_numBooms--;
-		std::cout << "xong "<<std::endl;
+		m_player->m_checkExitBom = true;
+		
+	}
+}
+
+void Map::BomBang(std::shared_ptr<Boom> bom)
+{
+	m_listFireLocation.push_back(bom->m_location);
+	int x = bom->m_location->m_x;
+	int y = bom->m_location->m_y;
+	for (int i = 1; i <= bom->m_power; i++) 
+	{
+		std::shared_ptr<Vec2i> vec1 = std::make_shared<Vec2i>(x + i*ENTITY_SIZE, y);
+		std::shared_ptr<Vec2i> vec2 = std::make_shared<Vec2i>(x -i * ENTITY_SIZE, y);
+		std::shared_ptr<Vec2i> vec3 = std::make_shared<Vec2i>(x , y+i * ENTITY_SIZE);
+		std::shared_ptr<Vec2i> vec4 = std::make_shared<Vec2i>(x , y-i * ENTITY_SIZE);
+		bool add1 = true;
+		bool add2 = true;
+		bool add3 = true;
+		bool add4 = true;
+		for (std::shared_ptr<Vec2i> lf : m_listFireLocation)
+		{
+			if (lf->Equal1(vec1))
+			{
+				add1 = false;
+			}
+			if (lf->Equal1(vec2))
+			{
+				add2 = false;
+			}
+			if (lf->Equal1(vec3))
+			{
+				add3 = false;
+			}
+			if (lf->Equal1(vec4))
+			{
+				add4 = false;
+			}
+		}
+		if (add1) {
+			m_listFireLocation.push_back(vec1);
+		}
+		if (add2) {
+			m_listFireLocation.push_back(vec2);
+		}
+		if (add3) {
+			m_listFireLocation.push_back(vec3);
+		}
+		if (add4) {
+			m_listFireLocation.push_back(vec4);
+		}
 	}
 }

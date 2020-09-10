@@ -34,13 +34,17 @@ public:
 	bool CheckCanMove(int x, int y, int size,bool isPlayer);
 	bool CheckHasBoom(int x, int y);
 	void SpawnBoom(int x, int y);
+	void BomBang(std::shared_ptr<Boom> bom);
+
+	GSPlay* m_GSPlay;
 
 	std::vector<std::shared_ptr<Boom>> m_booms;
+	std::vector<std::shared_ptr<Vec2i>> m_listFireLocation;
 protected:
 	
 	std::vector<std::shared_ptr<Enemy>> m_enemies;
 	std::vector<std::shared_ptr<Block>> m_blocks;
 	std::vector<std::shared_ptr<Block>> m_blocks2;
 	
-	GSPlay* m_GSPlay;
+	
 };

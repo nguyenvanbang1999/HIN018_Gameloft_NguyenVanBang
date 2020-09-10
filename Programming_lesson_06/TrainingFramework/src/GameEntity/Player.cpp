@@ -6,7 +6,7 @@
 
 
 
-Player::Player(std::shared_ptr<Vec2i> location) :AliveEnties(location, PLAYER_SPEED),m_numBooms(3)
+Player::Player(std::shared_ptr<Vec2i> location) :AliveEnties(location, PLAYER_SPEED), m_numBooms(3), m_boomPower(1)
 {
 	auto model = ResourceManagers::GetInstance()->GetModel("Sprite2D");
 	auto texture = ResourceManagers::GetInstance()->GetTexture("playerAnim");
