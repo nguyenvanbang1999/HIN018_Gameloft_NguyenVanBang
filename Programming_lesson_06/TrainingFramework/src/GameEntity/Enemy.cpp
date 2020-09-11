@@ -5,7 +5,7 @@
 
 #define		ENEMY1_SPEED	120
 
-Enemy::Enemy(std::shared_ptr<Vec2i> location) : AliveEnties(location, ENEMY1_SPEED)
+Enemy::Enemy(std::shared_ptr<Vec2i> location) : AliveEnties(location, ENEMY1_SPEED,1)
 {
 	auto model = ResourceManagers::GetInstance()->GetModel("Sprite2D");
 	auto texture = ResourceManagers::GetInstance()->GetTexture("enemy1Anim");
@@ -17,6 +17,10 @@ Enemy::Enemy(std::shared_ptr<Vec2i> location) : AliveEnties(location, ENEMY1_SPE
 void Enemy::Move(GLfloat deltatime,Map* map)
 {
 	//std::cout << deltatime << std::endl;
+	if (m_stunTime > 0)
+	{
+		return;
+	}
 	int moveRange= deltatime * m_speed;
 	int tempX = m_location->m_x;
 	int tempY= m_location->m_y;

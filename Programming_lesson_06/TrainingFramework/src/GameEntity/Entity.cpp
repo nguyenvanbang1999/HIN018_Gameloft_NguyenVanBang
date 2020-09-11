@@ -10,6 +10,7 @@ void Entity::Draw() {
 	
 }
 void Entity::Update(float deltatime) {
+	if (!m_animation->m_isExist) m_isExist = false;
 	m_animation->Update(deltatime);
 	m_animation->Set2DPosition(m_location->m_x, m_location->m_y);
 }

@@ -1,1 +1,64 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Cpp.Platform.targets(67,5): error MSB8020: The build tools for v142 (Platform Toolset = 'v142') cannot be found. To build using the v142 build tools, please install v142 build tools.  Alternatively, you may upgrade to the current Visual Studio tools by selecting the Project menu or right-click the solution, and then selecting "Retarget solution".
+﻿  BlockCantDestroy1.cpp
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\blockcantdestroy1.cpp(14): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  Boom.cpp
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\boom.cpp(10): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(1801): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(1866): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Models>&,std::shared_ptr<Shaders>&,std::shared_ptr<Texture>&,int,double,int,int>(std::shared_ptr<Models> &,std::shared_ptr<Shaders> &,std::shared_ptr<Texture> &,int &&,double &&,int &&,int &&)' being compiled
+          with
+          [
+              _Ty=Animation
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(1866): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Models>&,std::shared_ptr<Shaders>&,std::shared_ptr<Texture>&,int,double,int,int>(std::shared_ptr<Models> &,std::shared_ptr<Shaders> &,std::shared_ptr<Texture> &,int &&,double &&,int &&,int &&)' being compiled
+          with
+          [
+              _Ty=Animation
+          ]
+  c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\boom.cpp(9): note: see reference to function template instantiation 'std::shared_ptr<Animation> std::make_shared<Animation,std::shared_ptr<Models>&,std::shared_ptr<Shaders>&,std::shared_ptr<Texture>&,int,double,int,int>(std::shared_ptr<Models> &,std::shared_ptr<Shaders> &,std::shared_ptr<Texture> &,int &&,double &&,int &&,int &&)' being compiled
+  Enemy.cpp
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\enemy.cpp(14): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\enemy.cpp(20): warning C4244: 'initializing': conversion from 'GLfloat' to 'int', possible loss of data
+  Entity.cpp
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\entity.cpp(15): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  Map.cpp
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\map.cpp(48): warning C4018: '<': signed/unsigned mismatch
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\map.cpp(137): warning C4018: '<': signed/unsigned mismatch
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\map.cpp(157): warning C4018: '<': signed/unsigned mismatch
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\map.cpp(369): warning C4018: '<': signed/unsigned mismatch
+  Player.cpp
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\player.cpp(15): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\player.cpp(17): warning C4244: '*=': conversion from 'float' to 'int', possible loss of data
+  WoodBlock.cpp
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\woodblock.cpp(11): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  GSPlay.cpp
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gsplay.cpp(47): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gsplay.cpp(70): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gsplay.cpp(227): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gsplay.cpp(328): warning C4018: '<': signed/unsigned mismatch
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gsplay.cpp(344): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(1801): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(1866): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[10],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[10],TEXT_COLOR &&,double &&)' being compiled
+          with
+          [
+              _Ty=Text
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(1866): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[10],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[10],TEXT_COLOR &&,double &&)' being compiled
+          with
+          [
+              _Ty=Text
+          ]
+  c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gsplay.cpp(87): note: see reference to function template instantiation 'std::shared_ptr<Text> std::make_shared<Text,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[10],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[10],TEXT_COLOR &&,double &&)' being compiled
+LINK : warning LNK4098: defaultlib 'MSVCRTD' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Generating code
+  73 of 2117 functions ( 3.4%) were compiled, the rest were copied from previous compilation.
+    19 functions were new in current compilation
+    87 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  TrainingFramework.vcxproj -> C:\Users\bang8\Desktop\Git_test\HIN018_Gameloft_NguyenVanBang\Programming_lesson_06\\BIN-Nvidia\TrainingFramework.exe

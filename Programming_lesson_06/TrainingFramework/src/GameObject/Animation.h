@@ -16,11 +16,14 @@ public:
 	void		StopAnim();
 	bool		m_isExist;
 	int			m_typeAnim;
+
+	float		m_frameTime;
+	float		m_currentTime;
 protected:
 	int			m_numFrames;
-	float		m_frameTime;
+	
 	int			m_currentFrame;
-	float		m_currentTime;
+	
 	int			m_numLines;
 	int			m_currentLine;
 };

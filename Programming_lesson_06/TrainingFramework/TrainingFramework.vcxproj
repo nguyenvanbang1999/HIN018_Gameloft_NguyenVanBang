@@ -56,7 +56,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Nvidia|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
@@ -267,10 +267,12 @@
     <ClCompile Include="src\GameEntity\Boom.cpp" />
     <ClCompile Include="src\GameEntity\Enemy.cpp" />
     <ClCompile Include="src\GameEntity\Entity.cpp" />
+    <ClCompile Include="src\GameEntity\Item.cpp" />
     <ClCompile Include="src\GameEntity\Map.cpp" />
     <ClCompile Include="src\GameEntity\Player.cpp" />
     <ClCompile Include="src\GameEntity\Vec2i.cpp" />
     <ClCompile Include="src\GameEntity\WoodBlock.cpp" />
+    <ClCompile Include="src\GameManager\PlayerData.cpp" />
     <ClCompile Include="src\GameManager\ResourceManagers.cpp" />
     <ClCompile Include="src\GameObject\Animation.cpp" />
     <ClCompile Include="src\GameObject\Font.cpp" />
@@ -286,8 +288,10 @@
     <ClCompile Include="src\GameStates\GameStateMachine.cpp" />
     <ClCompile Include="src\GameStates\GSCredits.cpp" />
     <ClCompile Include="src\GameStates\GSIntro.cpp" />
+    <ClCompile Include="src\GameStates\GSLose.cpp" />
     <ClCompile Include="src\GameStates\GSMenu.cpp" />
     <ClCompile Include="src\GameStates\GSPlay.cpp" />
+    <ClCompile Include="src\GameStates\GSWin.cpp" />
     <ClCompile Include="src\TrainingFramework.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -300,10 +304,12 @@
     <ClInclude Include="src\GameEntity\Boom.h" />
     <ClInclude Include="src\GameEntity\Enemy.h" />
     <ClInclude Include="src\GameEntity\Entity.h" />
+    <ClInclude Include="src\GameEntity\Item.h" />
     <ClInclude Include="src\GameEntity\Map.h" />
     <ClInclude Include="src\GameEntity\Player.h" />
     <ClInclude Include="src\GameEntity\Vec2i.h" />
     <ClInclude Include="src\GameEntity\WoodBlock.h" />
+    <ClInclude Include="src\GameManager\PlayerData.h" />
     <ClInclude Include="src\GameManager\ResourceManagers.h" />
     <ClInclude Include="src\GameManager\Singleton.h" />
     <ClInclude Include="src\GameObject\Animation.h" />
@@ -321,8 +327,10 @@
     <ClInclude Include="src\GameStates\GameStateMachine.h" />
     <ClInclude Include="src\GameStates\GSCredits.h" />
     <ClInclude Include="src\GameStates\GSIntro.h" />
+    <ClInclude Include="src\GameStates\GSLose.h" />
     <ClInclude Include="src\GameStates\GSMenu.h" />
     <ClInclude Include="src\GameStates\GSPlay.h" />
+    <ClInclude Include="src\GameStates\GSWin.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

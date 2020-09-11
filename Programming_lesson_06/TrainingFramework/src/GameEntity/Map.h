@@ -4,10 +4,12 @@
 #include "Enemy.h"
 #include "Block.h"
 #include"Boom.h"
+#include"Item.h"
 
 #include<vector>
 #include <memory>
 #include"GameStates/GSPlay.h"
+
 #define		MAP_TOP_GUI		100
 
 static bool CheckHitBox(int x1, int y1, int size1, int x2, int y2, int size2)
@@ -26,7 +28,8 @@ static bool CheckHitBox(int x1, int y1, int size1, int x2, int y2, int size2)
 class Map 
 {
 public:
-	Map(GSPlay* gs);
+	Map(GSPlay* gs,int lvl, std::shared_ptr<Player> player );
+	Map(GSPlay* gs, int lvl);
 	
 	void Draw();
 	void Update(float deltatime);
@@ -35,16 +38,20 @@ public:
 	bool CheckHasBoom(int x, int y);
 	void SpawnBoom(int x, int y);
 	void BomBang(std::shared_ptr<Boom> bom);
+	void Destroy(std::shared_ptr<Vec2i> location);
+	void SpawnItem(std::shared_ptr<Vec2i> location);
 
 	GSPlay* m_GSPlay;
 
 	std::vector<std::shared_ptr<Boom>> m_booms;
 	std::vector<std::shared_ptr<Vec2i>> m_listFireLocation;
+	std::vector<std::shared_ptr<Enemy>> m_enemies;
+	
 protected:
 	
-	std::vector<std::shared_ptr<Enemy>> m_enemies;
 	std::vector<std::shared_ptr<Block>> m_blocks;
 	std::vector<std::shared_ptr<Block>> m_blocks2;
+	std::vector<std::shared_ptr<Item>> m_listItems;
 	
 	
 };

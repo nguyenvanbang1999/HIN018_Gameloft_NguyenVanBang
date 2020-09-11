@@ -3,8 +3,10 @@
 #include "GameConfig.h"
 
 
+
 class Application : public CSingleton<Application>
 {
+
 public:
 	Application();
 	~Application();

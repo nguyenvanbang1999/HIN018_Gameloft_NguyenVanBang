@@ -2,6 +2,8 @@
 #include "gamestatebase.h"
 #include"GameButton.h"
 
+#define NUM_LVL 2
+
 
 class Sprite2D;
 class Sprite3D;
@@ -9,11 +11,14 @@ class Text;
 class Animation;
 class Map;
 
+
+
+
 class GSPlay :
 	public GameStateBase
 {
 public:
-	GSPlay();
+	GSPlay(int lvl);
 	~GSPlay();
 
 	void Init();
@@ -33,6 +38,9 @@ public:
 	
 	void SetNewPostionForBullet();
 
+	
+	
+
 private:
 
 	std::shared_ptr<Sprite2D> m_BackGround;
@@ -42,6 +50,8 @@ private:
 	std::vector< std::shared_ptr<Sprite2D>> m_listSprite;
 	std::shared_ptr<Map> m_map;
 	int m_keyListener = 0;
+	int m_lvl;
+	std::string m_backgroundFile;
 
 };
 

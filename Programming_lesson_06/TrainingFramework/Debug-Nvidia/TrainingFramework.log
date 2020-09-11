@@ -1,5 +1,90 @@
 ﻿cl : Command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  GSWin.cpp
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gswin.cpp(34): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gswin.cpp(40): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  GSPlay.cpp
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gsplay.cpp(56): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gsplay.cpp(79): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gsplay.cpp(268): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gsplay.cpp(369): warning C4018: '<': signed/unsigned mismatch
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gsplay.cpp(385): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(1801): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(1866): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[10],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[10],TEXT_COLOR &&,double &&)' being compiled
+          with
+          [
+              _Ty=Text
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(1866): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[10],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[10],TEXT_COLOR &&,double &&)' being compiled
+          with
+          [
+              _Ty=Text
+          ]
+  c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gsplay.cpp(96): note: see reference to function template instantiation 'std::shared_ptr<Text> std::make_shared<Text,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[10],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[10],TEXT_COLOR &&,double &&)' being compiled
+  GameStatebase.cpp
+  Generating Code...
+  Compiling...
+  GSMenu.cpp
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gsmenu.cpp(27): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gsmenu.cpp(33): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gsmenu.cpp(43): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gsmenu.cpp(53): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gsmenu.cpp(65): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(1801): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(1866): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[1],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[1],TEXT_COLOR &&,double &&)' being compiled
+          with
+          [
+              _Ty=Text
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(1866): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[1],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[1],TEXT_COLOR &&,double &&)' being compiled
+          with
+          [
+              _Ty=Text
+          ]
+  c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gsmenu.cpp(64): note: see reference to function template instantiation 'std::shared_ptr<Text> std::make_shared<Text,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[1],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[1],TEXT_COLOR &&,double &&)' being compiled
+  GSLose.cpp
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gslose.cpp(34): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gslose.cpp(40): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  GSIntro.cpp
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gsintro.cpp(26): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  GSCredits.cpp
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gscredits.cpp(34): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gscredits.cpp(40): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  GameStateMachine.cpp
+  WoodBlock.cpp
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\woodblock.cpp(11): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
   Player.cpp
-c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\player.cpp(15): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\player.cpp(17): warning C4244: '*=': conversion from 'float' to 'int', possible loss of data
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\player.cpp(16): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\player.cpp(18): warning C4244: '*=': conversion from 'float' to 'int', possible loss of data
+  Map.cpp
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\map.cpp(56): warning C4018: '<': signed/unsigned mismatch
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\map.cpp(157): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\map.cpp(191): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\map.cpp(248): warning C4018: '<': signed/unsigned mismatch
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\map.cpp(262): warning C4018: '<': signed/unsigned mismatch
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\map.cpp(275): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\map.cpp(290): warning C4018: '<': signed/unsigned mismatch
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\map.cpp(310): warning C4018: '<': signed/unsigned mismatch
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\map.cpp(531): warning C4018: '<': signed/unsigned mismatch
+  Item.cpp
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\item.cpp(28): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  Enemy.cpp
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\enemy.cpp(14): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\enemy.cpp(24): warning C4244: 'initializing': conversion from 'GLfloat' to 'int', possible loss of data
+  BlockCantDestroy1.cpp
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gameentity\blockcantdestroy1.cpp(14): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  Application.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  Entity.cpp
+  Block.cpp
+  AliveEntites.cpp
+Application.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
   TrainingFramework.vcxproj -> C:\Users\bang8\Desktop\Git_test\HIN018_Gameloft_NguyenVanBang\Programming_lesson_06\\BIN-Nvidia\TrainingFramework.exe

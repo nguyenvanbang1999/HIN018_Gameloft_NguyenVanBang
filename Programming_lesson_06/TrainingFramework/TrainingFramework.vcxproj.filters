@@ -108,6 +108,18 @@
     <ClCompile Include="src\GameEntity\Vec2i.cpp">
       <Filter>TrainingFramework\src\GameEntity</Filter>
     </ClCompile>
+    <ClCompile Include="src\GameEntity\Item.cpp">
+      <Filter>TrainingFramework\src\GameEntity</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameStates\GSLose.cpp">
+      <Filter>TrainingFramework\src\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameManager\PlayerData.cpp">
+      <Filter>TrainingFramework\src\GameManager</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameStates\GSWin.cpp">
+      <Filter>TrainingFramework\src\GameStates</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Application.h">
@@ -203,6 +215,18 @@
     </ClInclude>
     <ClInclude Include="src\GameEntity\Vec2i.h">
       <Filter>TrainingFramework\src\GameEntity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameEntity\Item.h">
+      <Filter>TrainingFramework\src\GameEntity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameStates\GSLose.h">
+      <Filter>TrainingFramework\src\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameManager\PlayerData.h">
+      <Filter>TrainingFramework\src\GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameStates\GSWin.h">
+      <Filter>TrainingFramework\src\GameStates</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

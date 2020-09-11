@@ -11,6 +11,8 @@
 #include"Animation.h"
 #include "GameEntity/Map.h"
 
+#include"GameManager/PlayerData.h"
+
 
 #define PRESS_S 2
 #define PRESS_A 4
@@ -22,9 +24,16 @@
 extern int screenWidth; //need get on Graphic engine
 extern int screenHeight; //need get on Graphic engine
 
-GSPlay::GSPlay()
+
+
+GSPlay::GSPlay(int lvl):m_lvl(lvl)
 {
-	
+	if (m_lvl == 1)
+	{
+		m_backgroundFile = "Playbackground";
+		
+	}
+	if (m_lvl == 2) m_backgroundFile = "Playbackground";
 }
 
 
@@ -36,10 +45,10 @@ GSPlay::~GSPlay()
 
 void GSPlay::Init()
 {
-	m_map = std::make_shared<Map>(this);
+	m_map = std::make_shared<Map>(this, PlayerData::GetInstance()->m_lvl);
 	std::cout << "Init GSPlay" << std::endl;
 	auto model = ResourceManagers::GetInstance()->GetModel("Sprite2D");
-	auto texture = ResourceManagers::GetInstance()->GetTexture("Playbackground");
+	auto texture = ResourceManagers::GetInstance()->GetTexture(m_backgroundFile);
 
 	//BackGround
 	auto shader = ResourceManagers::GetInstance()->GetShader("TextureShader");
@@ -221,6 +230,38 @@ void GSPlay::HandleTouchEvents(int x, int y, bool bIsPressed)
 
 void GSPlay::Update(float deltaTime)
 {
+	/*
+	std::cout << player_hp << std::endl;
+	std::cout << player_numBom << std::endl;
+	std::cout << player_power << std::endl;
+	std::cout << player_hp << std::endl;
+	std::cout <<"--------------"<< std::endl;
+	*/
+	if (m_map->m_player->m_hp <= 0&&m_listAnim.size()<=0)
+	{
+		GameStateMachine::GetInstance()->PopState();
+		GameStateMachine::GetInstance()->PushState(StateTypes::STATE_Lose);
+	}
+	if (m_map->m_enemies.size() <= 0)
+	{
+		//std::cout << m_map->m_enemies.size() << std::endl;
+		PlayerData::GetInstance()->m_lvl++;
+		if (PlayerData::GetInstance()->m_lvl <= NUM_LVL)
+		{
+			GameStateMachine::GetInstance()->PopState();
+			GameStateMachine::GetInstance()->PushState(StateTypes::STATE_Play);
+		}
+		else
+		{
+			// Win GS
+			GameStateMachine::GetInstance()->PopState();
+			GameStateMachine::GetInstance()->PushState(StateTypes::STATE_Win);
+		}
+	}
+	else
+	{
+		//std::cout << m_map->m_enemies.size() << std::endl;
+	}
 	int moveRange = 0;
 	int lastBomindex = m_map->m_booms.size() - 1;
 	if (m_keyListener != 0) {
@@ -233,7 +274,7 @@ void GSPlay::Update(float deltaTime)
 	if (m_keyListener&PRESS_S) {
 		m_map->m_player->ChangedDirection(DOWN_DIRECTION);
 		tempY += moveRange;
-		if (m_map->CheckCanMove(tempX, tempY, playerSize,  m_map->m_player->m_checkExitBom))
+		if (m_map->CheckCanMove(tempX, tempY, playerSize, m_map->m_player->m_checkExitBom))
 		{
 			m_map->m_player->m_location->m_y = tempY;
 			if (lastBomindex >= 0)
@@ -250,7 +291,7 @@ void GSPlay::Update(float deltaTime)
 	if (m_keyListener&PRESS_A) {
 		m_map->m_player->ChangedDirection(LEFT_DIRECTION);
 		tempX -= moveRange;
-		if (m_map->CheckCanMove(tempX, tempY, playerSize,  m_map->m_player->m_checkExitBom) )
+		if (m_map->CheckCanMove(tempX, tempY, playerSize, m_map->m_player->m_checkExitBom))
 		{
 			m_map->m_player->m_location->m_x = tempX;
 			if (lastBomindex >= 0)
@@ -263,14 +304,14 @@ void GSPlay::Update(float deltaTime)
 			tempX += moveRange;
 		}
 		checkMove = true;
-		
+
 	}
 	if (m_keyListener&PRESS_D) {
 		m_map->m_player->ChangedDirection(RIGHT_DIRECTION);
 		tempX += moveRange;
-		if (m_map->CheckCanMove(tempX, tempY, playerSize,  m_map->m_player->m_checkExitBom) )
+		if (m_map->CheckCanMove(tempX, tempY, playerSize, m_map->m_player->m_checkExitBom))
 		{
-			
+
 			m_map->m_player->m_location->m_x = tempX;
 			if (lastBomindex >= 0)
 			{
@@ -282,12 +323,12 @@ void GSPlay::Update(float deltaTime)
 			tempX -= moveRange;
 		}
 		checkMove = true;
-		
+
 	}
 	if (m_keyListener&PRESS_W) {
 		m_map->m_player->ChangedDirection(TOP_DIRECTION);
 		tempY -= moveRange;
-		if (m_map->CheckCanMove(tempX, tempY, playerSize, m_map->m_player->m_checkExitBom) )
+		if (m_map->CheckCanMove(tempX, tempY, playerSize, m_map->m_player->m_checkExitBom))
 		{
 			m_map->m_player->m_location->m_y = tempY;
 			if (lastBomindex >= 0)
@@ -342,16 +383,13 @@ void GSPlay::Update(float deltaTime)
 		auto shader = ResourceManagers::GetInstance()->GetShader("AnimationShader");
 		std::shared_ptr<Animation> anim = std::make_shared<Animation>(model, shader, texture, NUM_FRAME, ANIM_SPEED, TYPE_NORMAL, NUM_LINE);
 		anim->Set2DPosition(v->m_x, v->m_y);
-		std::cout << v->m_x<<" "<<v->m_y << std::endl;
+		//std::cout << v->m_x<<" "<<v->m_y << std::endl;
 		anim->SetSize(ENTITY_SIZE, ENTITY_SIZE);
 		m_listAnim.push_back(anim);
 		//std::cout << "xong "   << std::endl;
 		
 	}
-	if (m_map->m_listFireLocation.size()>0)
-	{
-		std::cout << m_map->m_listFireLocation.size() << std::endl;
-	}
+	
 
 	
 	

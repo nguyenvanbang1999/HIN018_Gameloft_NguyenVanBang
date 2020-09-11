@@ -12,6 +12,13 @@ Boom::Boom(std::shared_ptr<Vec2i> location,int power):Entity(location),m_time(2.
 }
 void Boom::UpdateTime(float deltaTime)
 {
-	m_time -= deltaTime;
-	if (m_time <= 0) m_isExist = false;
+	if (!m_checkBang)
+	{
+		m_time -= deltaTime;
+		if (m_time <= 0) m_isExist = false;
+	}
+	else
+	{
+		m_isExist = false;
+	}
 }

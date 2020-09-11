@@ -18,16 +18,20 @@ class AliveEnties :public Entity
 {
 public:
 	
-	AliveEnties(std::shared_ptr<Vec2i> location, int speed);
+	AliveEnties(std::shared_ptr<Vec2i> location, int speed,int hp);
 	void ChangedDirection(int dir);
 	void Running();
 	void Stop();
-	
+	void Stun();
+	void UpdateTime(float deltaTime);
+	void SubHp();
 	
 
 	int m_direction;
 	bool m_running;
 	int m_speed;
+	int m_hp;
+	float m_stunTime;
 protected:
 	
 	

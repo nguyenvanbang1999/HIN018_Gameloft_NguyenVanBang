@@ -93,6 +93,7 @@ void Animation::Update(GLfloat deltatime)
 {
 	
 	if (m_typeAnim != TYPE_SPRITE) {
+		
 		m_currentTime += deltatime;
 		if (m_currentTime >= m_frameTime) {
 

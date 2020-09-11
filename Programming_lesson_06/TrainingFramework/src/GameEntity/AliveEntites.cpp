@@ -2,7 +2,7 @@
 
 class Map;
 
-AliveEnties::AliveEnties(std::shared_ptr<Vec2i> location, int speed):Entity(location),m_speed(speed),m_direction(DOWN_DIRECTION)
+AliveEnties::AliveEnties(std::shared_ptr<Vec2i> location, int speed,int hp):Entity(location),m_speed(speed),m_direction(DOWN_DIRECTION),m_hp(hp),m_stunTime(0.0f)
 {
 
 }
@@ -25,6 +25,35 @@ void AliveEnties::Stop()
 	m_animation->ChangedType(TYPE_SPRITE);
 	m_animation->StopAnim();
 }
-
+void AliveEnties::Stun()
+{
+	m_stunTime = 1.0f;
+	m_animation->StopAnim();
+	
+	m_animation->ChangedLine(STUN);
+	
+}
+void AliveEnties::UpdateTime(float deltaTime)
+{
+	if (m_stunTime <= deltaTime)
+	{
+		m_stunTime = 0;
+		m_animation->ChangedLine(m_direction);
+		m_animation->m_frameTime = ANIM_SPEED_ALIVE;
+	}
+	else
+	{
+		m_stunTime -= deltaTime;
+	}
+}
+void AliveEnties::SubHp() {
+	std::cout << "sub hp" << std::endl;
+	m_hp--;
+	if (m_hp <= 0)
+	{
+		std::cout << "sub hp <= 0" << std::endl;
+		m_isExist = false;
+	}
+}
 
 
