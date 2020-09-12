@@ -8,6 +8,7 @@
 #include "Sprite3D.h"
 #include "Text.h"
 #include "PlayerData.h"
+#include "SoundManager.h"
 
 extern int screenWidth; //need get on Graphic engine
 extern int screenHeight; //need get on Graphic engine
@@ -26,6 +27,7 @@ GSPause::~GSPause()
 
 void GSPause::Init()
 {
+	SoundManager::GetInstance()->PlayMenuBG();
 	auto model = ResourceManagers::GetInstance()->GetModel("Sprite2D");
 	auto texture = ResourceManagers::GetInstance()->GetTexture("PauseBackground");
 
@@ -98,7 +100,7 @@ void GSPause::Pause()
 
 void GSPause::Resume()
 {
-
+	SoundManager::GetInstance()->PlayGamePlayBG();
 }
 
 

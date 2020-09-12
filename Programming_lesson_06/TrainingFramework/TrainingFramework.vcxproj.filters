@@ -13,11 +13,11 @@
     <Filter Include="TrainingFramework\src\GameManager">
       <UniqueIdentifier>{7027cc7e-3941-43d3-9fd3-7009a76c222b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="TrainingFramework\src\GameStates">
-      <UniqueIdentifier>{2a875364-1a2b-4ea6-a6fe-716988208916}</UniqueIdentifier>
-    </Filter>
     <Filter Include="TrainingFramework\src\GameEntity">
       <UniqueIdentifier>{d30a0138-40ea-461e-a3e1-a5fa5eb68b4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TrainingFramework\src\GameStates">
+      <UniqueIdentifier>{67fef779-bc96-4695-9f7f-cbb180761ff1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -50,21 +50,6 @@
     </ClCompile>
     <ClCompile Include="src\GameObject\Font.cpp">
       <Filter>TrainingFramework\src\GameObject</Filter>
-    </ClCompile>
-    <ClCompile Include="src\GameStates\GameStatebase.cpp">
-      <Filter>TrainingFramework\src\GameStates</Filter>
-    </ClCompile>
-    <ClCompile Include="src\GameStates\GameStateMachine.cpp">
-      <Filter>TrainingFramework\src\GameStates</Filter>
-    </ClCompile>
-    <ClCompile Include="src\GameStates\GSIntro.cpp">
-      <Filter>TrainingFramework\src\GameStates</Filter>
-    </ClCompile>
-    <ClCompile Include="src\GameStates\GSMenu.cpp">
-      <Filter>TrainingFramework\src\GameStates</Filter>
-    </ClCompile>
-    <ClCompile Include="src\GameStates\GSPlay.cpp">
-      <Filter>TrainingFramework\src\GameStates</Filter>
     </ClCompile>
     <ClCompile Include="src\GameManager\ResourceManagers.cpp">
       <Filter>TrainingFramework\src\GameManager</Filter>
@@ -99,9 +84,6 @@
     <ClCompile Include="src\GameEntity\BlockCantDestroy1.cpp">
       <Filter>TrainingFramework\src\GameEntity</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameStates\GSCredits.cpp">
-      <Filter>TrainingFramework\src\GameStates</Filter>
-    </ClCompile>
     <ClCompile Include="src\GameEntity\Boom.cpp">
       <Filter>TrainingFramework\src\GameEntity</Filter>
     </ClCompile>
@@ -111,23 +93,44 @@
     <ClCompile Include="src\GameEntity\Item.cpp">
       <Filter>TrainingFramework\src\GameEntity</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameStates\GSLose.cpp">
-      <Filter>TrainingFramework\src\GameStates</Filter>
-    </ClCompile>
     <ClCompile Include="src\GameManager\PlayerData.cpp">
       <Filter>TrainingFramework\src\GameManager</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameStates\GSWin.cpp">
+    <ClCompile Include="src\GameStates\GameStatebase.cpp">
+      <Filter>TrainingFramework\src\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameStates\GameStateMachine.cpp">
+      <Filter>TrainingFramework\src\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameStates\GSCredits.cpp">
       <Filter>TrainingFramework\src\GameStates</Filter>
     </ClCompile>
     <ClCompile Include="src\GameStates\GSHelp.cpp">
       <Filter>TrainingFramework\src\GameStates</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameStates\GSPause.cpp">
+    <ClCompile Include="src\GameStates\GSIntro.cpp">
+      <Filter>TrainingFramework\src\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameStates\GSLose.cpp">
+      <Filter>TrainingFramework\src\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameStates\GSMenu.cpp">
       <Filter>TrainingFramework\src\GameStates</Filter>
     </ClCompile>
     <ClCompile Include="src\GameStates\GSOptions.cpp">
       <Filter>TrainingFramework\src\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameStates\GSPause.cpp">
+      <Filter>TrainingFramework\src\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameStates\GSPlay.cpp">
+      <Filter>TrainingFramework\src\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameStates\GSWin.cpp">
+      <Filter>TrainingFramework\src\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameManager\SoundManager.cpp">
+      <Filter>TrainingFramework\src\GameManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -167,21 +170,6 @@
     <ClInclude Include="src\GameObject\Font.h">
       <Filter>TrainingFramework\src\GameObject</Filter>
     </ClInclude>
-    <ClInclude Include="src\GameStates\GameStatebase.h">
-      <Filter>TrainingFramework\src\GameStates</Filter>
-    </ClInclude>
-    <ClInclude Include="src\GameStates\GameStateMachine.h">
-      <Filter>TrainingFramework\src\GameStates</Filter>
-    </ClInclude>
-    <ClInclude Include="src\GameStates\GSIntro.h">
-      <Filter>TrainingFramework\src\GameStates</Filter>
-    </ClInclude>
-    <ClInclude Include="src\GameStates\GSMenu.h">
-      <Filter>TrainingFramework\src\GameStates</Filter>
-    </ClInclude>
-    <ClInclude Include="src\GameStates\GSPlay.h">
-      <Filter>TrainingFramework\src\GameStates</Filter>
-    </ClInclude>
     <ClInclude Include="src\GameManager\ResourceManagers.h">
       <Filter>TrainingFramework\src\GameManager</Filter>
     </ClInclude>
@@ -216,9 +204,6 @@
     <ClInclude Include="src\GameEntity\BlockCantDestroy1.h">
       <Filter>TrainingFramework\src\GameEntity</Filter>
     </ClInclude>
-    <ClInclude Include="src\GameStates\GSCredits.h">
-      <Filter>TrainingFramework\src\GameStates</Filter>
-    </ClInclude>
     <ClInclude Include="src\GameEntity\Boom.h">
       <Filter>TrainingFramework\src\GameEntity</Filter>
     </ClInclude>
@@ -228,23 +213,44 @@
     <ClInclude Include="src\GameEntity\Item.h">
       <Filter>TrainingFramework\src\GameEntity</Filter>
     </ClInclude>
-    <ClInclude Include="src\GameStates\GSLose.h">
-      <Filter>TrainingFramework\src\GameStates</Filter>
-    </ClInclude>
     <ClInclude Include="src\GameManager\PlayerData.h">
       <Filter>TrainingFramework\src\GameManager</Filter>
     </ClInclude>
-    <ClInclude Include="src\GameStates\GSWin.h">
+    <ClInclude Include="src\GameStates\GameStatebase.h">
+      <Filter>TrainingFramework\src\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameStates\GameStateMachine.h">
+      <Filter>TrainingFramework\src\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameStates\GSCredits.h">
       <Filter>TrainingFramework\src\GameStates</Filter>
     </ClInclude>
     <ClInclude Include="src\GameStates\GSHelp.h">
       <Filter>TrainingFramework\src\GameStates</Filter>
     </ClInclude>
-    <ClInclude Include="src\GameStates\GSPause.h">
+    <ClInclude Include="src\GameStates\GSIntro.h">
+      <Filter>TrainingFramework\src\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameStates\GSLose.h">
+      <Filter>TrainingFramework\src\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameStates\GSMenu.h">
       <Filter>TrainingFramework\src\GameStates</Filter>
     </ClInclude>
     <ClInclude Include="src\GameStates\GSOptions.h">
       <Filter>TrainingFramework\src\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameStates\GSPause.h">
+      <Filter>TrainingFramework\src\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameStates\GSPlay.h">
+      <Filter>TrainingFramework\src\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameStates\GSWin.h">
+      <Filter>TrainingFramework\src\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameManager\SoundManager.h">
+      <Filter>TrainingFramework\src\GameManager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

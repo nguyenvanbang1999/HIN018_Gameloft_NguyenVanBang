@@ -15,6 +15,8 @@
 
 #include"GameManager/PlayerData.h"
 
+#include"SoundManager.h"
+
 
 #define		MAP_WIDTH	21
 #define		MAP_HEIGHT	12
@@ -206,6 +208,7 @@ void Map::Update(float deltatime)
 	{
 		if (CheckHitBox(m_player->m_location->m_x, m_player->m_location->m_y, m_player->m_size, i->m_location->m_x, i->m_location->m_y, i->m_size))
 		{
+			SoundManager::GetInstance()->EatItem();
 			switch (i->m_type)
 			{
 			case ITEM_ADDHP:
@@ -395,6 +398,7 @@ void Map::SpawnBoom(int x, int y)
 	if (!CheckHasBoom(x1, y1)&& m_player->m_numBooms>0)
 	{
 		m_booms.push_back(std::make_shared<Boom>(std::make_shared<Vec2i>(x1,y1), m_player->m_boomPower));
+		SoundManager::GetInstance()->SpawnBom();
 		m_player->m_numBooms--;
 		m_player->m_checkExitBom = true;
 		
@@ -518,6 +522,7 @@ void Map::BomBang(std::shared_ptr<Boom> bom)
 			m_listFireLocation.push_back(vec4);
 		}
 	}
+	SoundManager::GetInstance()->BomBang();
 }
 
 void Map::Destroy(std::shared_ptr<Vec2i> location)

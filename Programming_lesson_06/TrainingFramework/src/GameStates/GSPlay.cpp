@@ -12,6 +12,7 @@
 #include "GameEntity/Map.h"
 
 #include"GameManager/PlayerData.h"
+#include "SoundManager.h"
 
 
 #define PRESS_S 2
@@ -49,6 +50,7 @@ GSPlay::~GSPlay()
 
 void GSPlay::Init()
 {
+	SoundManager::GetInstance()->PlayGamePlayBG();
 	if (PlayerData::GetInstance()->m_lvl > NUM_LVL)
 	{
 		PlayerData::GetInstance()->Reset();
@@ -123,6 +125,7 @@ void GSPlay::Pause()
 
 void GSPlay::Resume()
 {
+	SoundManager::GetInstance()->PlayGamePlayBG();
 	std::cout << "Resum" << std::endl;
 }
 

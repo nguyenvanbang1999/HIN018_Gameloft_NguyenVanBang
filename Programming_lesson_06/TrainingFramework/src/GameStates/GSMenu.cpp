@@ -1,5 +1,5 @@
 #include "GSMenu.h"
-
+#include"SoundManager.h"
 
 extern int screenWidth; //need get on Graphic engine
 extern int screenHeight; //need get on Graphic engine
@@ -18,6 +18,7 @@ GSMenu::~GSMenu()
 
 void GSMenu::Init()
 {
+	SoundManager::GetInstance()->PlayMenuBG();
 	auto model = ResourceManagers::GetInstance()->GetModel("Sprite2D");
 	auto texture = ResourceManagers::GetInstance()->GetTexture("bg_boom");
 
@@ -71,7 +72,7 @@ void GSMenu::Init()
 
 	//exit button
 	texture = ResourceManagers::GetInstance()->GetTexture("Exitbutton");
-	button = std::make_shared<GameButton>(model, shader, texture);
+	button = std::make_shared<GameButton>(model, shader, texture,true);
 	button->Set2DPosition(screenWidth / 3, 550);
 	button->SetSize(200, 50);
 	button->SetOnClick([]() {
@@ -100,7 +101,7 @@ void GSMenu::Pause()
 
 void GSMenu::Resume()
 {
-
+	SoundManager::GetInstance()->PlayMenuBG();
 }
 
 

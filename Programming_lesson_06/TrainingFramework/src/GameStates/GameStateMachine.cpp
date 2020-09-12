@@ -1,6 +1,7 @@
 
 #include "GameStateMachine.h"
 #include "GameStateBase.h"
+#include "SoundManager.h"
 
 GameStateMachine::GameStateMachine()
 {
@@ -38,6 +39,7 @@ void GameStateMachine::ChangeState(std::shared_ptr<GameStateBase> state)
 
 void GameStateMachine::PushState(StateTypes stt)
 {
+	SoundManager::GetInstance()->Clear();
 	std::shared_ptr<GameStateBase> state = GameStateBase::CreateState(stt);
 	// pause current state
 	if (!m_StatesStack.empty()) {
@@ -52,8 +54,10 @@ void GameStateMachine::PushState(StateTypes stt)
 
 void GameStateMachine::PopState()
 {
+	SoundManager::GetInstance()->Clear();
 	// cleanup the current state
 	if (!m_StatesStack.empty()) {
+
 		m_StatesStack.back()->Exit();
 		m_StatesStack.pop_back();
 	}

@@ -1,5 +1,5 @@
 #include "GSIntro.h"
-
+#include"SoundManager.h"
 
 extern int screenWidth; //need get on Graphic engine
 extern int screenHeight; //need get on Graphic engine
@@ -18,6 +18,7 @@ GSIntro::~GSIntro()
 
 void GSIntro::Init()
 {
+	SoundManager::GetInstance();
 	auto model = ResourceManagers::GetInstance()->GetModel("Sprite2D");
 	auto shader = ResourceManagers::GetInstance()->GetShader("TextureShader");
 	auto texture = ResourceManagers::GetInstance()->GetTexture("logotest1");
