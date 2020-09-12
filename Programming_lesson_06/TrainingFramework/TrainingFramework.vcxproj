@@ -287,6 +287,7 @@
     <ClCompile Include="src\GameStates\GameStatebase.cpp" />
     <ClCompile Include="src\GameStates\GameStateMachine.cpp" />
     <ClCompile Include="src\GameStates\GSCredits.cpp" />
+    <ClCompile Include="src\GameStates\GSHelp.cpp" />
     <ClCompile Include="src\GameStates\GSIntro.cpp" />
     <ClCompile Include="src\GameStates\GSLose.cpp" />
     <ClCompile Include="src\GameStates\GSMenu.cpp" />
@@ -326,6 +327,7 @@
     <ClInclude Include="src\GameStates\GameStatebase.h" />
     <ClInclude Include="src\GameStates\GameStateMachine.h" />
     <ClInclude Include="src\GameStates\GSCredits.h" />
+    <ClInclude Include="src\GameStates\GSHelp.h" />
     <ClInclude Include="src\GameStates\GSIntro.h" />
     <ClInclude Include="src\GameStates\GSLose.h" />
     <ClInclude Include="src\GameStates\GSMenu.h" />

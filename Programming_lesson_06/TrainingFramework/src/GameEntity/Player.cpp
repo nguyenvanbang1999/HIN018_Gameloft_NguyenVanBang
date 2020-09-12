@@ -15,6 +15,7 @@ Player::Player(std::shared_ptr<Vec2i> location) :AliveEnties(location, PlayerDat
 	m_animation = std::make_shared<Animation>(model,shader,texture,NUM_FRAME_ALIVE, ANIM_SPEED_ALIVE, TYPE_SPRITE, NUM_LINE_ALIVE);
 	m_animation->Set2DPosition(m_location->m_x, m_location->m_y);
 	m_animation->SetSize(ENTITY_SIZE, ENTITY_SIZE);
+	m_animation->isPlayer = true;
 	m_size *= 0.6f;
 	
 }
@@ -27,6 +28,7 @@ void Player::UpdateTimeProtected(float deltatime)
 	if (m_protectedTime <= deltatime)
 	{
 		m_protectedTime = 0.0f;
+		m_animation->m_isProtected = false;
 	}
 	else
 	{

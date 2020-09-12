@@ -15,6 +15,11 @@ public:
 	void		ChangedType(int type);
 	void		StopAnim();
 	bool		m_isExist;
+
+	bool		isPlayer=false;
+
+	bool		m_isProtected;
+
 	int			m_typeAnim;
 
 	float		m_frameTime;

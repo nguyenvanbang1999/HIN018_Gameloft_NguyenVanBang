@@ -8,6 +8,7 @@
 #include "GSCredits.h"
 #include "GSLose.h"
 #include"GSWin.h"
+#include"GSHelp.h"
 
 #include "GameStatebase.h"
 #include "GameManager/PlayerData.h"
@@ -36,6 +37,9 @@ std::shared_ptr<GameStateBase> GameStateBase::CreateState(StateTypes stt)
 		break;
 	case STATE_Win:
 		gs = std::make_shared<GSWin>();
+		break;
+	case STATE_Help:
+		gs = std::make_shared<GSHelp>();
 		break;
 	default:
 		break;

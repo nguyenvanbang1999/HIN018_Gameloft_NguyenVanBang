@@ -47,11 +47,10 @@ void AliveEnties::UpdateTime(float deltaTime)
 	}
 }
 void AliveEnties::SubHp() {
-	std::cout << "sub hp" << std::endl;
 	m_hp--;
 	if (m_hp <= 0)
 	{
-		std::cout << "sub hp <= 0" << std::endl;
+		
 		m_isExist = false;
 	}
 }

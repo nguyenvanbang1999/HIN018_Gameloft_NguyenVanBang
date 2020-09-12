@@ -30,10 +30,14 @@ GSPlay::GSPlay(int lvl):m_lvl(lvl)
 {
 	if (m_lvl == 1)
 	{
-		m_backgroundFile = "Playbackground";
+		m_backgroundFile = "Playbackground1";
 		
 	}
-	if (m_lvl == 2) m_backgroundFile = "Playbackground";
+	if (m_lvl == 2) m_backgroundFile = "Playbackground2";
+	else
+	{
+		m_backgroundFile = "Playbackground1";
+	}
 }
 
 
@@ -45,6 +49,10 @@ GSPlay::~GSPlay()
 
 void GSPlay::Init()
 {
+	if (PlayerData::GetInstance()->m_lvl > NUM_LVL)
+	{
+		PlayerData::GetInstance()->Reset();
+	}
 	m_map = std::make_shared<Map>(this, PlayerData::GetInstance()->m_lvl);
 	std::cout << "Init GSPlay" << std::endl;
 	auto model = ResourceManagers::GetInstance()->GetModel("Sprite2D");
@@ -56,21 +64,7 @@ void GSPlay::Init()
 	m_BackGround->Set2DPosition(screenWidth / 2, screenHeight / 2);
 	m_BackGround->SetSize(screenWidth, screenHeight);
 
-	//list test fps;
-	/*for (int i = 0; i < 6; i++)
-	{
-		std::cout << "Init test" << std::endl;
-		for (int j = 0; j < 12; j++)
-		{
-			texture = ResourceManagers::GetInstance()->GetTexture("enemy1Anim");
-			std::shared_ptr<Sprite2D> s = std::make_shared<Sprite2D>(model, shader, texture);
-			s->Set2DPosition(j * 40, i * 40);
-			s->SetSize(38, 38);
-			m_listSprite.push_back(s);
-
-		}
-		std::cout << "Init test xong" << std::endl;
-	}*/
+	
 	
 
 	// quit button
@@ -95,8 +89,24 @@ void GSPlay::Init()
 	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("arialbd");
 	m_score = std::make_shared< Text>(shader, font, "score: 10", TEXT_COLOR::RED, 1.0);
 	m_score->Set2DPosition(Vector2(5, 25));
+
 	texture = ResourceManagers::GetInstance()->GetTexture("button_quit");
 	std::cout << "Init xong" << std::endl;
+
+	// GUI
+	
+	std::string hp = std::to_string(PlayerData::GetInstance()->m_player_hp);
+
+	m_PlayerHp = std::make_shared< Text>(shader, font, std::to_string(PlayerData::GetInstance()->m_player_hp), TEXT_COLOR::RED, 1.0);
+	m_PlayerNumBom = std::make_shared< Text>(shader, font, std::to_string(PlayerData::GetInstance()->m_player_numBom), TEXT_COLOR::RED, 1.0);
+	m_PlayerPower = std::make_shared< Text>(shader, font, std::to_string(PlayerData::GetInstance()->m_player_power), TEXT_COLOR::RED, 1.0);
+	m_PlayerSpeed = std::make_shared< Text>(shader, font, std::to_string((PlayerData::GetInstance()->m_player_speed -150)/50), TEXT_COLOR::RED, 1.0);
+	
+	m_PlayerHp->Set2DPosition(240, 35);
+	m_PlayerNumBom->Set2DPosition(380,75 );
+	m_PlayerPower->Set2DPosition(240, 75);
+	m_PlayerSpeed->Set2DPosition(380, 30);
+	m_score->Set2DPosition(Vector2(5, 25));
 	
 }
 
@@ -108,12 +118,12 @@ void GSPlay::Exit()
 
 void GSPlay::Pause()
 {
-
+	std::cout << "Pause" << std:: endl;
 }
 
 void GSPlay::Resume()
 {
-
+	std::cout << "Resum" << std::endl;
 }
 
 
@@ -230,13 +240,7 @@ void GSPlay::HandleTouchEvents(int x, int y, bool bIsPressed)
 
 void GSPlay::Update(float deltaTime)
 {
-	/*
-	std::cout << player_hp << std::endl;
-	std::cout << player_numBom << std::endl;
-	std::cout << player_power << std::endl;
-	std::cout << player_hp << std::endl;
-	std::cout <<"--------------"<< std::endl;
-	*/
+	
 	if (m_map->m_player->m_hp <= 0&&m_listAnim.size()<=0)
 	{
 		GameStateMachine::GetInstance()->PopState();
@@ -406,8 +410,17 @@ void GSPlay::Draw()
 	//m_score->Draw();
 	m_QuitButton->Draw();
 	//m_animation->Draw();
-	
+
+
+	m_PlayerHp->setText(std::to_string(PlayerData::GetInstance()->m_player_hp));
+	m_PlayerNumBom -> setText(std::to_string(PlayerData::GetInstance()->m_player_numBom));
+	m_PlayerPower->setText(std::to_string(PlayerData::GetInstance()->m_player_power));
+	m_PlayerSpeed->setText(std::to_string((PlayerData::GetInstance()->m_player_speed - 150) / 50));
 	m_map->Draw();
+	m_PlayerHp->Draw();
+	m_PlayerNumBom->Draw();
+	m_PlayerPower->Draw();
+	m_PlayerSpeed->Draw();
 	//std::cout << "Draw xong" << std::endl;
 	for (auto a : m_listAnim)
 	{

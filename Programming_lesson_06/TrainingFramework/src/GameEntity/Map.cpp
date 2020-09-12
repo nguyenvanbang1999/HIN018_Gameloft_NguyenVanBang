@@ -159,6 +159,7 @@ void Map::Update(float deltatime)
 				m_GSPlay->AddAnim(anim);
 			}
 			m_player->m_protectedTime = 2.0f;
+			m_player->m_animation->m_isProtected = true;
 			break;
 		}
 	}
@@ -193,6 +194,7 @@ void Map::Update(float deltatime)
 					m_GSPlay->AddAnim(anim);
 				}
 				m_player->m_protectedTime = 2.0f;
+				m_player->m_animation->m_isProtected = true;
 			}
 		}
 		
