@@ -68,13 +68,13 @@ void GSPlay::Init()
 	
 
 	// quit button
-	texture = ResourceManagers::GetInstance()->GetTexture("Backbutton");
+	texture = ResourceManagers::GetInstance()->GetTexture("PauseButton");
 	std::shared_ptr<GameButton> button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(screenWidth - 30, 30);
+	button->Set2DPosition(screenWidth - 50, 50);
 	button->SetSize(50, 50);
 	button->SetOnClick([]() {
 
-		GameStateMachine::GetInstance()->PopState();
+		GameStateMachine::GetInstance()->PushState(STATE_Pause);
 		});
 	m_QuitButton = button;
 	//animation

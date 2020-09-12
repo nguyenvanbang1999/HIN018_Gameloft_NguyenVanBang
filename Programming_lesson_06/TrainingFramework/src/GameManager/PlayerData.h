@@ -10,5 +10,13 @@ public:
 	int m_player_speed ;
 	int m_player_hp ;
 
+	int m_lvlStastLVL;
+	int m_player_numBomStastLVL;
+	int m_player_powerStastLVL;
+	int m_player_speedStastLVL;
+	int m_player_hpStastLVL;
+
 	void Reset();
+	void Update();
+	void Restart();
 };

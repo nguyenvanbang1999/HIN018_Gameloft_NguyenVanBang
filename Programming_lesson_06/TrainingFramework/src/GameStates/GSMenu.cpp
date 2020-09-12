@@ -30,7 +30,7 @@ void GSMenu::Init()
 	//play button
 	texture = ResourceManagers::GetInstance()->GetTexture("Playbutton");
 	std::shared_ptr<GameButton> button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(screenWidth / 2, 150);
+	button->Set2DPosition(screenWidth / 3, 150);
 	button->SetSize(200, 50);
 	button->SetOnClick([]() {
 		GameStateMachine::GetInstance()->PushState(StateTypes::STATE_Play);
@@ -40,27 +40,39 @@ void GSMenu::Init()
 	//Credits button
 	texture = ResourceManagers::GetInstance()->GetTexture("Creditbutton");
 	button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(screenWidth / 2, 250);
+	button->Set2DPosition(screenWidth / 3, 250);
 	button->SetSize(200, 50);
 	button->SetOnClick([]() {
-		GameStateMachine::GetInstance()->ChangeState(StateTypes::STATE_Credits);
+		GameStateMachine::GetInstance()->PushState(StateTypes::STATE_Credits);
 		});
 	m_listButton.push_back(button);
 
 	//Help button
 	texture = ResourceManagers::GetInstance()->GetTexture("HelpButton");
 	button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(screenWidth / 2, 350);
+	button->Set2DPosition(screenWidth / 3, 350);
 	button->SetSize(200, 50);
 	button->SetOnClick([]() {
-		GameStateMachine::GetInstance()->ChangeState(StateTypes::STATE_Help);
+		GameStateMachine::GetInstance()->PushState(StateTypes::STATE_Help);
+		});
+	m_listButton.push_back(button);
+
+	// Option button
+	//Help button
+	texture = ResourceManagers::GetInstance()->GetTexture("OptionsButton");
+	button = std::make_shared<GameButton>(model, shader, texture);
+	button->Set2DPosition(screenWidth / 3, 450);
+	button->SetSize(200, 50);
+	button->SetOnClick([]() {
+		// GSOption
+		GameStateMachine::GetInstance()->PushState(StateTypes::STATE_Options);
 		});
 	m_listButton.push_back(button);
 
 	//exit button
 	texture = ResourceManagers::GetInstance()->GetTexture("Exitbutton");
 	button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(screenWidth / 2, 450);
+	button->Set2DPosition(screenWidth / 3, 550);
 	button->SetSize(200, 50);
 	button->SetOnClick([]() {
 		exit(0);

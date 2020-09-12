@@ -9,6 +9,8 @@
 #include "GSLose.h"
 #include"GSWin.h"
 #include"GSHelp.h"
+#include"GSPause.h"
+#include"GSOptions.h"
 
 #include "GameStatebase.h"
 #include "GameManager/PlayerData.h"
@@ -40,6 +42,12 @@ std::shared_ptr<GameStateBase> GameStateBase::CreateState(StateTypes stt)
 		break;
 	case STATE_Help:
 		gs = std::make_shared<GSHelp>();
+		break;
+	case STATE_Pause:
+		gs = std::make_shared<GSPause>();
+		break;
+	case STATE_Options:
+		gs = std::make_shared<GSOptions>();
 		break;
 	default:
 		break;
