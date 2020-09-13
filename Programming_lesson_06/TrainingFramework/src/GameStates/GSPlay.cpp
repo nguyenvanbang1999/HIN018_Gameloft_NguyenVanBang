@@ -286,7 +286,12 @@ void GSPlay::Update(float deltaTime)
 			m_map->m_player->m_location->m_y = tempY;
 			if (lastBomindex >= 0)
 			{
-				m_map->m_player->SetCheck(m_map->m_booms.at(m_map->m_booms.size() - 1));
+				for (int i = 0; i < m_map->m_player->m_checkExitBom; i++)
+				{
+					m_map->m_player->SetCheck(m_map->m_booms.at(m_map->m_booms.size() - 1-i));
+
+				}
+				
 			}
 		}
 		else
@@ -303,7 +308,11 @@ void GSPlay::Update(float deltaTime)
 			m_map->m_player->m_location->m_x = tempX;
 			if (lastBomindex >= 0)
 			{
-				m_map->m_player->SetCheck(m_map->m_booms.at(m_map->m_booms.size() - 1));
+				for (int i = 0; i < m_map->m_player->m_checkExitBom; i++)
+				{
+					m_map->m_player->SetCheck(m_map->m_booms.at(m_map->m_booms.size() - 1 - i));
+
+				}
 			}
 		}
 		else
@@ -322,7 +331,12 @@ void GSPlay::Update(float deltaTime)
 			m_map->m_player->m_location->m_x = tempX;
 			if (lastBomindex >= 0)
 			{
-				m_map->m_player->SetCheck(m_map->m_booms.at(m_map->m_booms.size() - 1));
+				for (int i = 0; i < m_map->m_player->m_checkExitBom; i++)
+				{
+					
+					m_map->m_player->SetCheck(m_map->m_booms.at(m_map->m_booms.size() - 1 - i));
+
+				}
 			}
 		}
 		else
@@ -340,7 +354,11 @@ void GSPlay::Update(float deltaTime)
 			m_map->m_player->m_location->m_y = tempY;
 			if (lastBomindex >= 0)
 			{
-				m_map->m_player->SetCheck(m_map->m_booms.at(m_map->m_booms.size() - 1));
+				for (int i = 0; i < m_map->m_player->m_checkExitBom; i++)
+				{
+					m_map->m_player->SetCheck(m_map->m_booms.at(m_map->m_booms.size() - 1 - i));
+
+				}
 			}
 		}
 		else

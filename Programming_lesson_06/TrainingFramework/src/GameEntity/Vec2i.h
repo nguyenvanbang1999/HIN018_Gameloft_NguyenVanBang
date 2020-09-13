@@ -10,4 +10,6 @@ public:
 	int m_y;
 	bool Equal(Vec2i vec);
 	bool Equal1(std::shared_ptr<Vec2i> vec);
+	float Range(int x, int y);
+	Vec2i GetLogicLocation(int x, int y);
 };

@@ -20,6 +20,9 @@ public:
 	SoLoud::Wav m_BomBang;
 	SoLoud::Wav m_eatItem;
 	SoLoud::Wav m_Lose;
+	SoLoud::Wav m_Win;
+	SoLoud::Wav m_EnemyStun;
+	SoLoud::Wav m_Protected;
 
 	void OnMusic();
 	void OffMusic();
@@ -31,6 +34,10 @@ public:
 	void EatItem();
 	void SpawnBom();
 	void PlayDeath();
+
+	void EnemyStun();
+	void Protected();
+	void PlayWin();
 
 	void PlayMenuBG();
 	void PlayGamePlayBG();

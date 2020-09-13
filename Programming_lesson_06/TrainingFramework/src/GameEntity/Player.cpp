@@ -21,7 +21,8 @@ Player::Player(std::shared_ptr<Vec2i> location) :AliveEnties(location, PlayerDat
 }
 void Player::SetCheck(std::shared_ptr<Boom> bom)
 {
-	m_checkExitBom = CheckHitBox(m_location->m_x, m_location->m_y, m_size, bom->m_location->m_x, bom->m_location->m_y, bom->m_size);
+	if(!CheckHitBox(m_location->m_x, m_location->m_y, m_size, bom->m_location->m_x, bom->m_location->m_y, bom->m_size))
+	m_checkExitBom--;
 }
 void Player::UpdateTimeProtected(float deltatime)
 {

@@ -15,6 +15,9 @@ SoundManager::SoundManager() {
 	m_eatItem.load("..\\Data\\Audio\\ItemDing.wav");
 	m_Lose.load("..\\Data\\Audio\\Death.wav");
 	m_SpawnBom.load("..\\Data\\Audio\\Bit.wav");
+	m_Win.load("..\\Data\\Audio\\Win.wav");
+	m_EnemyStun.load("..\\Data\\Audio\\EnemyStun.wav");
+	m_Protected.load("..\\Data\\Audio\\Protected.wav");
 }
 void SoundManager::OnMusic()
 {
@@ -75,4 +78,20 @@ void SoundManager::PlayGamePlayBG()
 {
 	if (!m_MusicON) return;
 	m_soloud.play(m_PlayBackgroundSound);
+}
+
+void SoundManager::EnemyStun()
+{
+	if (!m_SoundON) return;
+	m_soloud.play(m_EnemyStun);
+}
+void SoundManager::Protected()
+{
+	if (!m_SoundON) return;
+	m_soloud.play(m_Protected);
+}
+void SoundManager::PlayWin() 
+{
+	if (!m_MusicON) return;
+	m_soloud.play(m_Win);
 }

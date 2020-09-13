@@ -35,23 +35,23 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Angle|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-AMD|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-ATI|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-ATI|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Nvidia|Win32'" Label="Configuration">
@@ -145,7 +145,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>$(SolutionDir)\Include\AMD;$(SolutionDir)\freetype\include;$(SolutionDir)\Utilities\src;$(projectdir)\src\GameManager;$(projectdir)\src\GameObject;$(projectdir)\src\GameState;$(projectdir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)soloud20200207\include;$(SolutionDir)\Include\AMD;$(SolutionDir)\freetype\include;$(SolutionDir)\Utilities\src;$(projectdir)\src\GameManager;$(projectdir)\src\GameObject;$(projectdir)\src\GameState;$(projectdir)\src</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -269,6 +269,9 @@
     <ClCompile Include="src\GameEntity\BlockCantDestroy1.cpp" />
     <ClCompile Include="src\GameEntity\Boom.cpp" />
     <ClCompile Include="src\GameEntity\Enemy.cpp" />
+    <ClCompile Include="src\GameEntity\Enemy1.cpp" />
+    <ClCompile Include="src\GameEntity\Enemy2.cpp" />
+    <ClCompile Include="src\GameEntity\Enemy3.cpp" />
     <ClCompile Include="src\GameEntity\Entity.cpp" />
     <ClCompile Include="src\GameEntity\Item.cpp" />
     <ClCompile Include="src\GameEntity\Map.cpp" />
@@ -310,6 +313,9 @@
     <ClInclude Include="src\GameEntity\BlockCantDestroy1.h" />
     <ClInclude Include="src\GameEntity\Boom.h" />
     <ClInclude Include="src\GameEntity\Enemy.h" />
+    <ClInclude Include="src\GameEntity\Enemy1.h" />
+    <ClInclude Include="src\GameEntity\Enemy2.h" />
+    <ClInclude Include="src\GameEntity\Enemy3.h" />
     <ClInclude Include="src\GameEntity\Entity.h" />
     <ClInclude Include="src\GameEntity\Item.h" />
     <ClInclude Include="src\GameEntity\Map.h" />

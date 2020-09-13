@@ -24,7 +24,7 @@ public:
 	void Stop();
 	void Stun();
 	void UpdateTime(float deltaTime);
-	void SubHp();
+	void virtual SubHp();
 	
 
 	int m_direction;

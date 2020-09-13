@@ -34,12 +34,16 @@ public:
 	void Draw();
 	void Update(float deltatime);
 	std::shared_ptr<Player> m_player;
-	bool CheckCanMove(int x, int y, int size,bool isPlayer);
+	bool CheckCanMove(int x, int y, int size,int countBom=0);
 	bool CheckHasBoom(int x, int y);
 	void SpawnBoom(int x, int y);
 	void BomBang(std::shared_ptr<Boom> bom);
 	void Destroy(std::shared_ptr<Vec2i> location);
 	void SpawnItem(std::shared_ptr<Vec2i> location);
+
+	int m_matrix[12][22];
+
+	void UpdateMatrix();
 
 	GSPlay* m_GSPlay;
 

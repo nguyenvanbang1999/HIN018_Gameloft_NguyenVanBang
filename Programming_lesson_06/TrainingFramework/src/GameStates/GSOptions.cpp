@@ -108,7 +108,7 @@ void GSOptions::Pause()
 
 void GSOptions::Resume()
 {
-
+	SoundManager::GetInstance()->PlayMenuBG();
 }
 
 

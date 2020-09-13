@@ -4,6 +4,7 @@
 #include <string>
 #include<memory>
 #include<chrono>
+#include<vector>
 
 #include "ResourceManagers.h"
 
@@ -11,6 +12,9 @@
 #include"Player.h"
 #include"WoodBlock.h"
 #include"Enemy.h"
+#include"Enemy1.h"
+#include"Enemy2.h"
+#include"Enemy3.h"
 #include"Block.h"
 
 #include"GameManager/PlayerData.h"
@@ -90,7 +94,20 @@ Map::Map(GSPlay* gs,int lvl) :m_GSPlay(gs)
 			}
 			case 'E':
 			{
-				std::shared_ptr<Enemy> e = std::make_shared<Enemy>(loc);
+				std::shared_ptr<Enemy1> e = std::make_shared<Enemy1>(loc);
+				m_enemies.push_back(e);
+				//m_GSPlay->AddAnim(e->m_animation);
+				break;
+			}
+			case 'e':
+			{
+				std::shared_ptr<Enemy2> e = std::make_shared<Enemy2>(loc);
+				m_enemies.push_back(e);
+				//m_GSPlay->AddAnim(e->m_animation);
+				break;
+			}case 'S':
+			{
+				std::shared_ptr<Enemy3> e = std::make_shared<Enemy3>(loc,2);
 				m_enemies.push_back(e);
 				//m_GSPlay->AddAnim(e->m_animation);
 				break;
@@ -137,7 +154,7 @@ void Map::Draw() {
 }
 void Map::Update(float deltatime) 
 {
-	//std::cout << m_player->m_hp << std::endl;
+	//std::cout << m_player->m_checkExitBom << std::endl;
 	m_player->Update(deltatime);
 	m_player->UpdateTimeProtected(deltatime);
 	if(m_player->m_protectedTime<=0.0f)
@@ -161,12 +178,13 @@ void Map::Update(float deltatime)
 				m_GSPlay->AddAnim(anim);
 			}
 			m_player->m_protectedTime = 2.0f;
+			SoundManager::GetInstance()->Protected();
 			m_player->m_animation->m_isProtected = true;
 			break;
 		}
 	}
 	
-	for (std::shared_ptr<Enemy> e : m_enemies)
+	for (auto e : m_enemies)
 	{
 		for (std::shared_ptr<Vec2i> loc : m_listFireLocation)
 		{
@@ -174,7 +192,9 @@ void Map::Update(float deltatime)
 			{
 				//Player  protected
 				e->Stun();
+				SoundManager::GetInstance()->EnemyStun();
 				e->SubHp();
+				break;
 			}
 		}
 		if (CheckHitBox(e->m_location->m_x, e->m_location->m_y, e->m_size, m_player->m_location->m_x, m_player->m_location->m_y, m_player->m_size))
@@ -195,7 +215,8 @@ void Map::Update(float deltatime)
 					anim->SetSize(ENTITY_SIZE, ENTITY_SIZE);
 					m_GSPlay->AddAnim(anim);
 				}
-				m_player->m_protectedTime = 2.0f;
+				m_player->m_protectedTime = 2.0f; 
+				SoundManager::GetInstance()->Protected();
 				m_player->m_animation->m_isProtected = true;
 			}
 		}
@@ -287,6 +308,7 @@ void Map::Update(float deltatime)
 	for (auto e : m_enemies) 
 	{
 		e->Move(deltatime,this);
+		e->Skill(this);
 		e->Update(deltatime);
 		e->UpdateTime(deltatime);
 		
@@ -337,7 +359,7 @@ void Map::Update(float deltatime)
 	
 	//std::cout << "boom update" << std::endl;
 }
-bool Map::CheckCanMove(int x, int y, int size,bool isPlayer) 
+bool Map::CheckCanMove(int x, int y, int size,int countBom) 
 {
 	
 	for (auto b : m_blocks) {
@@ -353,22 +375,21 @@ bool Map::CheckCanMove(int x, int y, int size,bool isPlayer)
 		}
 	}
 	int n = m_booms.size() ;
-	if (isPlayer)
-	{
-		n -= 1;
-		//std::cout << "chua exit" << std::endl;
-	}
-	else
-	{
-		//std::cout << "exit r " <<n<<std:: endl;
-	}
-	for (int i = 0; i < n;i++) {
+	
+	
+	
+
+	
+
+	for (int i = 0; i < n-countBom;i++) {
 		std::shared_ptr<Boom> b = m_booms.at(i);
 		if (CheckHitBox(x, y, size, b->m_location->m_x, b->m_location->m_y, b->m_size))
 		{
 			return false;
 		}
 	}
+	
+
 	return  true;
 }
 
@@ -383,7 +404,6 @@ bool Map::CheckHasBoom(int x, int y)
 	}
 	return false;
 }
-
 
 void Map::SpawnBoom(int x, int y)
 {
@@ -400,12 +420,21 @@ void Map::SpawnBoom(int x, int y)
 		m_booms.push_back(std::make_shared<Boom>(std::make_shared<Vec2i>(x1,y1), m_player->m_boomPower));
 		SoundManager::GetInstance()->SpawnBom();
 		m_player->m_numBooms--;
-		m_player->m_checkExitBom = true;
+		m_player->m_checkExitBom ++;
 		
 	}
 }
 
 void Map::BomBang(std::shared_ptr<Boom> bom)
+
+
+
+
+
+
+
+
+
 {
 	m_listFireLocation.push_back(bom->m_location);
 	m_player->m_numBooms++;
@@ -432,7 +461,7 @@ void Map::BomBang(std::shared_ptr<Boom> bom)
 			
 			if (addRight)
 			{
-				if (CheckCanMove(vec1->m_x, vec1->m_y, ENTITY_SIZE, false))
+				if (CheckCanMove(vec1->m_x, vec1->m_y, ENTITY_SIZE))
 				{
 					//std::cout << "right = true " << std::endl;
 					if (lf->Equal1(vec1))
@@ -453,7 +482,7 @@ void Map::BomBang(std::shared_ptr<Boom> bom)
 			
 			if (addLeft)
 			{
-				if (CheckCanMove(vec2->m_x, vec2->m_y, ENTITY_SIZE, false))
+				if (CheckCanMove(vec2->m_x, vec2->m_y, ENTITY_SIZE))
 				{
 					
 					if (lf->Equal1(vec2))
@@ -472,7 +501,7 @@ void Map::BomBang(std::shared_ptr<Boom> bom)
 			}
 			if (addBot)
 			{
-				if (CheckCanMove(vec3->m_x, vec3->m_y, ENTITY_SIZE, false))
+				if (CheckCanMove(vec3->m_x, vec3->m_y, ENTITY_SIZE))
 				{
 					
 					if (lf->Equal1(vec3))
@@ -491,7 +520,8 @@ void Map::BomBang(std::shared_ptr<Boom> bom)
 			}
 			if (addTop)
 			{
-				if (CheckCanMove(vec4->m_x, vec4->m_y, ENTITY_SIZE, false))
+				if (CheckCanMove(vec4->m_x, vec4->m_y, ENTITY_SIZE
+))
 				{
 					
 					if (lf->Equal1(vec4))
@@ -552,6 +582,15 @@ void Map::Destroy(std::shared_ptr<Vec2i> location)
 
 void Map::SpawnItem(std::shared_ptr<Vec2i> location)
 {
-	int type = rand() % 4;
-	m_listItems.push_back(std::make_shared<Item>(location, type));
+	int ran = rand() % 5;
+	if (ran < 1)
+	{
+		int type = rand() % 4;
+		m_listItems.push_back(std::make_shared<Item>(location, type));
+	}
+}
+void Map::UpdateMatrix()
+{
+	
+
 }

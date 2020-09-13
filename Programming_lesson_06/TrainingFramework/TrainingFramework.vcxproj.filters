@@ -132,6 +132,15 @@
     <ClCompile Include="src\GameManager\SoundManager.cpp">
       <Filter>TrainingFramework\src\GameManager</Filter>
     </ClCompile>
+    <ClCompile Include="src\GameEntity\Enemy1.cpp">
+      <Filter>TrainingFramework\src\GameEntity</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameEntity\Enemy2.cpp">
+      <Filter>TrainingFramework\src\GameEntity</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameEntity\Enemy3.cpp">
+      <Filter>TrainingFramework\src\GameEntity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Application.h">
@@ -251,6 +260,15 @@
     </ClInclude>
     <ClInclude Include="src\GameManager\SoundManager.h">
       <Filter>TrainingFramework\src\GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameEntity\Enemy1.h">
+      <Filter>TrainingFramework\src\GameEntity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameEntity\Enemy2.h">
+      <Filter>TrainingFramework\src\GameEntity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameEntity\Enemy3.h">
+      <Filter>TrainingFramework\src\GameEntity</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
