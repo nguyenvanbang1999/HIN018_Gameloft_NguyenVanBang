@@ -341,6 +341,10 @@ void Map::Update(float deltatime)
 		b->Update(deltatime);
 		if(!b->m_isExist)
 		{
+			if (i >= m_booms.size() - m_player->m_checkExitBom )
+			{
+				m_player->m_checkExitBom--;
+			}
 			
 			if (!b->m_checkBang)
 			{

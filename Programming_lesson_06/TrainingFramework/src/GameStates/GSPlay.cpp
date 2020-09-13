@@ -310,6 +310,7 @@ void GSPlay::Update(float deltaTime)
 			{
 				for (int i = 0; i < m_map->m_player->m_checkExitBom; i++)
 				{
+					if(m_map->m_booms.size() - 1 - i)
 					m_map->m_player->SetCheck(m_map->m_booms.at(m_map->m_booms.size() - 1 - i));
 
 				}
