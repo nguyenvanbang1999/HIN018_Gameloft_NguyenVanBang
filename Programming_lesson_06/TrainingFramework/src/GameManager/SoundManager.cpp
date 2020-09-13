@@ -71,12 +71,14 @@ void SoundManager::PlayMenuBG()
 	if (!m_MusicON) return;
 	else
 	{
+		printf("Play Menu Back GR\n");
 		m_soloud.play(m_MenuBackgroundSound);
 	}
 }
 void SoundManager::PlayGamePlayBG()
 {
 	if (!m_MusicON) return;
+	printf("Play Game Back GR\n");
 	m_soloud.play(m_PlayBackgroundSound);
 }
 

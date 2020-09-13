@@ -100,7 +100,7 @@ void GSPause::Pause()
 
 void GSPause::Resume()
 {
-	SoundManager::GetInstance()->PlayGamePlayBG();
+	SoundManager::GetInstance()->PlayMenuBG();
 }
 
 
