@@ -1,8 +1,11 @@
 ﻿cl : Command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  GSPause.cpp
-c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gspause.cpp(37): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gspause.cpp(43): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gspause.cpp(53): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gspause.cpp(65): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gspause.cpp(79): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  GSWin.cpp
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gswin.cpp(38): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gswin.cpp(44): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  GSLose.cpp
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gslose.cpp(38): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\bang8\desktop\git_test\hin018_gameloft_nguyenvanbang\programming_lesson_06\trainingframework\src\gamestates\gslose.cpp(44): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  Generating Code...
+Application.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
   TrainingFramework.vcxproj -> C:\Users\bang8\Desktop\Git_test\HIN018_Gameloft_NguyenVanBang\Programming_lesson_06\\BIN-Nvidia\TrainingFramework.exe

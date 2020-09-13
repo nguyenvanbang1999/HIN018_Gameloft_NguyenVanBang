@@ -8,6 +8,7 @@
 #include "Sprite3D.h"
 #include "Text.h"
 #include "SoundManager.h"
+#include "PlayerData.h"
 
 extern int screenWidth; //need get on Graphic engine
 extern int screenHeight; //need get on Graphic engine
@@ -27,6 +28,7 @@ GSWin::~GSWin()
 void GSWin::Init()
 {
 	SoundManager::GetInstance()->PlayWin();
+	PlayerData::GetInstance()->Reset();
 	auto model = ResourceManagers::GetInstance()->GetModel("Sprite2D");
 	auto texture = ResourceManagers::GetInstance()->GetTexture("WinBackground");
 
